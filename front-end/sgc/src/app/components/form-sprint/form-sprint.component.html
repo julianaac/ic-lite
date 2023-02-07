@@ -1,0 +1,48 @@
+
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <h2>Cadastro de Sprints</h2>
+    <input type="hidden" name="sprint_id" [(ngModel)]="registro.sprint_id">
+
+    <div class="form-group">
+        <label for=name>Nome da Sprint </label>
+        <input type="text" placeholder="Coloque o nome da Sprint" name="sprint_name"
+            [(ngModel)]="registro.sprint_name" required />
+    </div>
+
+    <div class="form-group">
+        <label>Data de Início da Sprint</label>
+        <input type="date" placeholder="Coloque a data de início da sprint" name="sprint_start_date"
+            [(ngModel)]="registro.sprint_start_date" required />
+    </div>
+
+    <div class="form-group">
+        <label>Data de Término da Sprint</label>
+        <input type="date" placeholder="Coloque a data de término da sprint" name="sprint_end_date"
+            [(ngModel)]="registro.sprint_end_date" required />
+    </div>
+
+    <div class="form-group">
+        <label for="typeSprint">Ids da Tecnologia da Sprint</label>
+        <select [(ngModel)]="registro.team" 
+        [compareWith]="compareById" 
+        name="team" required>
+            <option *ngFor="let item of team" 
+            [ngValue]="item"> {{item.team_name}} </option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="user">Usuário </label>
+        <select [(ngModel)]="registro.user" 
+        [compareWith]="compareById" 
+        name="user" required>
+            <option *ngFor="let item of user" 
+            [ngValue]="item"> {{item.user_name}} </option>
+        </select>
+    </div>
+
+    <input type="submit" value="Cancel" routerLink="../">
+    <input type="submit" value="Save" [disabled]="form.invalid">
+
+</form>
+

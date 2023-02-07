@@ -1,0 +1,54 @@
+<form (ngSubmit)="submit(form)" #form="ngForm">
+  <div class="grid">
+
+      <input type="hidden" name="student_id" [(ngModel)]="registro.student_id">
+      <div class="form-group">
+        <label for="user">Usuário</label>
+        <select [(ngModel)]="registro.user"
+        [compareWith]="compareById"
+        name="user" required>
+          <option *ngFor="let item of users"
+          [ngValue]="item"> {{item.user_name}} </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="classroom">Turma</label>
+        <select [(ngModel)]="registro.classroom"
+        [compareWith]="compareById"
+        name="classroom" required>
+          <option *ngFor="let item of classrooms"
+          [ngValue]="item"> {{item.classroom_name}} </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="modality">Modalidade</label>
+        <select [(ngModel)]="registro.modality"
+        [compareWith]="compareById"
+        name="modality" required>
+          <option *ngFor="let item of modalitys"
+          [ngValue]="item"> {{item.modality_name}} </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="socioeconomicInformation">Informações Socio</label>
+        <select [(ngModel)]="registro.socioeconomicInformation"
+        [compareWith]="compareById"
+        name="socioeconomicInformation" required>
+          <option *ngFor="let item of socioeconomicInformations"
+          [ngValue]="item"> {{item.socioeconomic_information_id}} </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="technicalKnowledge">Conhecimento</label>
+        <select [(ngModel)]="registro.technicalKnowledge"
+        [compareWith]="compareById"
+        name="technicalKnowledge" required>
+          <option *ngFor="let item of technicalKnowledges"
+          [ngValue]="item"> {{item.technical_knowledge_id}} </option>
+        </select>
+      </div>
+
+  </div>
+  <input type="button" value="Cancelar" routerLink="../">
+  <input type="submit" value="Salvar" [disabled]="form.invalid">
+</form>

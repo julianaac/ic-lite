@@ -1,0 +1,15 @@
+<form [formGroup]="form">
+  <h2>Cadastro de Modalidades</h2>
+    <!-- <input type="hidden" name="modality_id" formControlName="modality_id" #modality_id> -->
+
+    <div class="form-group">
+      <label for="modality_code">Código</label>
+      <input type="text" placeholder="Coloque o Código"  formControlName="modality_code" #modality_code required />
+    </div>
+    <div class="form-group">
+      <label for="modality_name">Nome</label>
+      <input type="text" placeholder="Coloque o nome"  formControlName="modality_name" #modality_name  required />
+    </div>
+    <button class="btn-danger" (click)="onCancel()" >Cancelar</button>
+    <button class="btn-secondary" (click)="submit()" >Salvar </button>
+  </form>

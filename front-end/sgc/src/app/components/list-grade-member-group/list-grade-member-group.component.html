@@ -1,0 +1,30 @@
+<table class="table table" id="tableEquipment">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Front-End</th>
+        <th>Back-End</th>
+        <th>Git</th>
+        <th>Database</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of registros">
+        <td> {{ item.grade_member_group_feedback }} </td>
+        <td> {{ item.grade_member_group_grade }} </td>
+        <td> {{ item.groupAnswer.group_answer_content }} </td>
+        <td> {{ item.student.user.user_name  }} </td>
+        <td class="fit">
+          <button routerLink="/report/form" type="button" [queryParams]="{ id: item.grade_member_group_id }"  class="btn btn-secondary">Editar</button>
+          <button type="button"(click)="delete(item.grade_member_group_id)" class="btn btn-danger">Deletar</button>
+
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="9">Total de registros: {{ registros.length }} </td>
+      </tr>
+    </tfoot>
+</table>

@@ -1,0 +1,36 @@
+
+<div class="container">
+  <div class="tabela">
+    <table class="table table" id="tableTraining">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Carga Horária</th>
+          <th>Data ínicio</th>
+          <th>Data termino</th>
+          <th>Coordenador Responsavel</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of registros">
+          <td> {{ item.training_name }} </td>
+          <td> {{ item.training_workload }} </td>
+          <td> {{ item.training_start_date}} </td>
+          <td> {{ item.training_end_date }} </td>
+          <td> {{ item.user.user_name }} </td>
+          <td class="fit">
+            <button type="button" (click)="delete(item.training_id)"><i class="del fas fa-trash-alt"></i></button>
+            <button><i type="button" routerLink="/new" class="print fas fa-edit"></i></button>
+
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="9">Total de registros: {{ registros.length }} </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

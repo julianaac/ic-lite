@@ -1,0 +1,37 @@
+<table class="table table" id="tableEquipment">
+  <thead>
+      <tr>
+          <th>Conteúdo</th>
+          <th>Status</th>
+          <th>Tipo de Relatório</th>
+          <!-- <th>Usuário</th> -->
+          <th>Template</th>
+          <th>Ações</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let item of registros">
+          <td> {{ item.report_content }} </td>
+          <td> {{ item.report_status }} </td>
+          <td> {{ item.typeReport.type_report_name }} </td>
+          <!-- <td> {{ item.user.user_name }} </td> -->
+          <td> {{ item.templateReport.template_report_name }} </td>
+          <td class="fit">
+              <!-- <input [(ngModel)]="item.report_status"> -->
+              <button type="button" (click)="delete(item.report_id)" class="btn btn-danger">Deletar</button>
+              <button type="button" class="btn btn-outline-info" (click)="updateStatus(item.report_id)" [ngClass]="{'inativo': item.report_status == 'ENVIADO' || item.report_status == 'ARQUIVADO' || item.report_status == 'CONFIRMADO'}">ENVIAR</button>
+              <button type="button" class="btn btn-outline-info" (click)="updateStatus(item.report_id)" [ngClass]="{'inativo': item.report_status == 'CONFIRMADO' || item.report_status == 'CRIADO' || item.report_status == 'ENVIADO' || item.report_status == 'ARQUIVADO'}">CONFIRMAR</button>
+
+              <button type="button" class="btn btn-outline-info" (click)="updateStatus(item.report_id)" [ngClass]="{'inativo': item.report_status == 'ARQUIVADO'  || item.report_status == 'CRIADO'}">ARQUIVAR</button>
+
+              <button type="button"  (click)="geraPDF(item.report_id)"class="btn btn-outline-success">Baixar</button>
+
+            </td>
+      </tr>
+  </tbody>
+  <tfoot>
+      <tr>
+          <td colspan="9">Total de registros: {{ registros.length }} </td>
+      </tr>
+  </tfoot>
+</table>

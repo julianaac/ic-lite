@@ -1,0 +1,421 @@
+[
+  {
+    "_id": "8670c49b-0482-4864-a237-57f7ba2cea91",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:4000/checkins/",
+    "url": "https://localhost:9000/training/",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-01-24T20:21:46.933Z",
+    "modified": "2023-01-25T23:30:12.555Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "6473f9d7-609a-4fe0-8348-b9ecbc0fc344",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:4000/deletetudo/checkin/",
+    "url": "https://localhost:9000/training/2",
+    "method": "DELETE",
+    "sortNum": 0,
+    "created": "2023-01-24T20:22:06.479Z",
+    "modified": "2023-02-01T00:11:55.882Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "33b71cbe-1403-46d9-8ffa-5901bc839c76",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:9000/training/",
+    "url": "https://localhost:9000/training/",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-01-25T23:30:40.311Z",
+    "modified": "2023-01-27T00:07:27.340Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \n  \"training_name\": \"WEB ACADEMY - Capacitação em Desenvolvimento Web Full-Stack\",\n  \"training_workload\": 620,\n  \"training_start_date\": \"2022-03-07\",\n  \"training_end_date\": \"2023-03-22\",\n  \"user\": {\n    \"user_id\": 1,\n    \"user_name\": \"Daricélio Moreira\",\n    \"user_user\": \"daricelio\",\n    \"user_cpf\": \"66688899944\",\n    \"user_registration\": \"COR001\",\n    \"user_curriculum_vitae\": \"\",\n    \"user_email\": \"email@gmail.com\",\n    \"user_git\": null,\n    \"user_telephone\": \"5568999123548\",\n    \"user_small_bibliography\": \"\",\n    \"typeUser\": {\n      \"type_user_id\": 1,\n      \"type_user_name\": \"ROLE_COORDENADOR_DO_PROJETO\"\n    }\n  }\n}",
+      "form": []
+    },
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "eb45c2cf-a224-4e8a-8490-9a8b0c8fb2d1",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:9000/training/1",
+    "url": "https://localhost:9000/training/1",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-01-25T23:31:49.204Z",
+    "modified": "2023-01-25T23:31:49.204Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "d4ebc1c7-4a4d-4ecb-b608-44321f9a75df",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:9000/training/busca/daricelio",
+    "url": "https://localhost:9000/training/busca/daricelio",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-01-26T23:57:27.873Z",
+    "modified": "2023-01-26T23:57:27.873Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "0510d261-4829-46aa-8939-b119d2d85fa4",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:9000/training/",
+    "url": "https://localhost:9000/checkin/",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-01-27T00:08:14.294Z",
+    "modified": "2023-02-01T00:39:42.108Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \n  \"training_name\": \"WEB ACADEMY - Capacitação em Desenvolvimento Web Full-Stack\",\n  \"training_workload\": 620,\n  \"training_start_date\": \"2022-03-07\",\n  \"training_end_date\": \"2023-03-22\",\n  \"user\": {\n    \"user_id\": 1,\n    \"user_name\": \"Daricélio Moreira\",\n    \"user_user\": \"daricelio\",\n    \"user_cpf\": \"66688899944\",\n    \"user_registration\": \"COR001\",\n    \"user_curriculum_vitae\": \"\",\n    \"user_email\": \"email@gmail.com\",\n    \"user_git\": null,\n    \"user_telephone\": \"5568999123548\",\n    \"user_small_bibliography\": \"\",\n    \"typeUser\": {\n      \"type_user_id\": 1,\n      \"type_user_name\": \"ROLE_COORDENADOR_DO_PROJETO\"\n    }\n  }\n}",
+      "form": []
+    },
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "60e9738b-8dd6-4757-85cf-7f9d24ef3568",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:9000/training/",
+    "url": "https://localhost:9000/training/",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-01-27T00:15:49.305Z",
+    "modified": "2023-02-01T00:12:22.145Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \n  \"training_name\": \"WEB ACDEMY - Capacitação em Desenvolvimento Web Full-Stackjfgj\",\n  \"training_workload\": 620,\n  \"training_start_date\": \"2022-03-07\",\n  \"training_end_date\": \"2023-03-22\",\n  \"user\": {\n    \"user_id\": 1,\n    \"user_name\": \"Daricélio Moreira\",\n    \"user_user\": \"daricelio\",\n    \"user_cpf\": \"66688899944\",\n    \"user_registration\": \"COR001\",\n    \"user_curriculum_vitae\": \"\",\n    \"user_email\": \"email@gmail.com\",\n    \"user_git\": null,\n    \"user_telephone\": \"5568999123548\",\n    \"user_small_bibliography\": \"\",\n    \"typeUser\": {\n      \"type_user_id\": 1,\n      \"type_user_name\": \"ROLE_COORDENADOR_DO_PROJETO\"\n    }\n  }\n}",
+      "form": []
+    },
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "59eee7de-70e0-422f-9797-8e63a568129f",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:9000/teacher/",
+    "url": "https://localhost:9000/teacher/",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-01T00:38:21.724Z",
+    "modified": "2023-02-01T00:38:33.966Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "fe88486e-62cf-4c35-a5fc-6a2acea19eda",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:9000/teacher/4",
+    "url": "https://localhost:9000/teacher/4",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-01T00:39:24.585Z",
+    "modified": "2023-02-01T00:39:24.585Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "205b584c-a72a-49a6-86e7-5bfbc7ca332d",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:9000/teacher/busca/daricelio",
+    "url": "https://localhost:9000/teacher/busca/daricelio",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-01T00:40:47.040Z",
+    "modified": "2023-02-01T00:40:47.040Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "ecbf886b-e856-4e4b-8484-3b4da7336d85",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:9000/teacher/busca/66688899944",
+    "url": "https://localhost:9000/teacher/busca/66688899944",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-01T00:41:34.025Z",
+    "modified": "2023-02-01T00:41:34.025Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "1c57ffc2-7b0c-4241-9da8-539fbbe35298",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:9000/teacher/busca/academy",
+    "url": "https://localhost:9000/teacher/busca/academy",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-01T00:44:31.553Z",
+    "modified": "2023-02-01T00:44:31.553Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "151a2e1b-108f-438b-bca1-184c3ef478cb",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:9000/teacher/busca/vito",
+    "url": "https://localhost:9000/teacher/busca/vito",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-01T00:45:35.191Z",
+    "modified": "2023-02-01T00:45:35.191Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "3a8840b5-984b-46c5-b7d0-f07ad3a9ab0a",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:9000/teacher/busca/Fre",
+    "url": "https://localhost:9000/teacher/busca/Fre",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-01T00:46:11.352Z",
+    "modified": "2023-02-01T00:46:11.352Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "80e5ce4a-8674-4a58-b9c5-e4eb89200481",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:9000/teacher/",
+    "url": "https://localhost:9000/teacher/",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-02-01T00:53:23.045Z",
+    "modified": "2023-02-01T00:54:45.425Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"teacher_id\": 4,\n  \"training\": {\n    \"training_id\": 1,\n    \"training_name\": \"WEB ACADEMY - Capacitação em Desenvolvimento Web Full-Stack\",\n    \"training_workload\": 620,\n    \"training_start_date\": \"2022-03-07\",\n    \"training_end_date\": \"2023-03-22\",\n    \"user\": {\n      \"user_name\": \"Daricélio Moreira Soares\",\n      \"user_user\": \"daricelio\",\n      \"user_cpf\": \"66688899944\",\n      \"user_registration\": \"COR001\",\n      \"user_curriculum_vitae\": \"\",\n      \"user_email\": \"email@gmail.com\",\n      \"user_git\": null,\n      \"user_telephone\": \"5568999123548\",\n      \"user_small_bibliography\": \"\",\n      \"situation\": {\n        \"situation_id\": 1,\n        \"situation_name\": \"Ativo\"\n      },\n      \"typeUser\": {\n        \"type_user_id\": 1,\n        \"type_user_name\": \"ROLE_COORDENADOR_DO_PROJETO\"\n      }\n    }\n  },\n  \"user\": {\n    \"user_id\": 76,\n    \"user_name\": \"André Luiz Nasserala\",\n    \"user_user\": \"andre_luiz\",\n    \"user_cpf\": \"00022233355\",\n    \"user_registration\": \"PRO004\",\n    \"user_curriculum_vitae\": \"vazio\",\n    \"user_email\": \"email@gmail.com\",\n    \"user_git\": \"vazio\",\n    \"user_telephone\": \"5568984112233\",\n    \"user_small_bibliography\": \"vazio\",\n    \"situation\": {\n      \"situation_id\": 1,\n      \"situation_name\": \"Ativo\"\n    },\n    \"typeUser\": {\n      \"type_user_id\": 7,\n      \"type_user_name\": \"ROLE_PROFESSOR\"\n    }\n  }\n}",
+      "form": []
+    },
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "2432112a-68e0-4734-8d30-abd9cff87440",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:9000/teacher/",
+    "url": "https://localhost:9000/checkin/viewcurrentdiscipline/58",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-01T01:19:09.336Z",
+    "modified": "2023-02-03T21:03:53.356Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "0a122d83-1d3a-4aef-b397-a8e4c7c30733",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:9000/teacher/4",
+    "url": "https://localhost:9000/teacher/4",
+    "method": "DELETE",
+    "sortNum": 0,
+    "created": "2023-02-01T01:27:34.529Z",
+    "modified": "2023-02-01T01:27:34.529Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "7a584b69-535a-49ca-a2c4-c025377e412e",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:9000/student/",
+    "url": "https://localhost:9000/viewcurrentdisciplinecheckoutrel/58",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-01T01:34:28.525Z",
+    "modified": "2023-02-03T21:09:57.495Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "e6d11615-f561-4dbe-95d9-b8f9c0c3ae58",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:9000/user/",
+    "url": "https://localhost:9000/user/",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-01T01:41:11.779Z",
+    "modified": "2023-02-01T01:41:11.779Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  }
+]

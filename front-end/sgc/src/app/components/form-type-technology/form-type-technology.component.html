@@ -1,0 +1,12 @@
+<form (ngSubmit)="submit(form)" #form="ngForm" >
+    <h2>Cadastro de Tipo de Tecnologia</h2>
+    <input type="hidden" name="type_Technology_id" [(ngModel)]="registro.type_technology_id">
+  
+    <div class="form-group">
+      <label for="type_technology_name">Nome</label>
+      <input type="text" placeholder="Coloque o Nome"  name="type_technology_name" [(ngModel)]="registro.type_technology_name" required />
+    </div>
+    <input type="button" value="Cancelar" routerLink="../">
+    <input type="submit" value="salvar" [disabled]="form.invalid">
+  </form>
+  

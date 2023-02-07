@@ -1,0 +1,39 @@
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Avaliação Respondidade</th>
+            <th>Disciplina</th>
+            <th>Estudante</th>
+            <th>Professor</th>
+            <th>Capacitação</th>
+            <th>Ações</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of registros">
+            <td> {{ item.student_evaluation_id }} </td>
+            <td> {{ item.student_evaluation_is_answer }} </td>
+            <td> {{ item.subject.subject_name }} </td>
+            <td> {{ item.student.user.user_name }} </td>
+            <td> {{ item.teacher.user.user_name }} </td>
+            <td> {{ item.training.training_name }} </td>
+
+
+            <td class="fit">
+                <button routerLink="/report/form" type="button" [queryParams]="{ id: item.student_evaluation_id }"
+                    class="btn btn-secondary">Editar</button>
+                <button type="button" (click)="delete(item.student_evaluation_id)" class="btn btn-danger">Deletar</button>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="9">Total de registros: {{ registros.length }} </td>
+        </tr>
+    </tfoot>
+</table>
+

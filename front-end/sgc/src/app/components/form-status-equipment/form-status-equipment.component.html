@@ -1,0 +1,12 @@
+<form (ngSubmit)="submit(form)" #form="ngForm" >
+    <h2>Cadastro de Status de equipamento</h2>
+    <input type="hidden" name="type_Task_id" [(ngModel)]="registro.status_equipment_id">
+  
+    <div class="form-group">
+      <label for="status_equipment_name">Nome</label>
+      <input type="text" placeholder="Coloque o Nome"  name="status_equipment_name" [(ngModel)]="registro.status_equipment_name" required />
+    </div>
+    <input type="button" value="Cancelar" routerLink="../">
+    <input type="submit" value="salvar" [disabled]="form.invalid">
+  </form>
+  

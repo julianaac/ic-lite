@@ -1,0 +1,45 @@
+<form (ngSubmit)="submit(form)" #form="ngForm">
+  <input type="hidden" name="training_id" [(ngModel)]="registro.training_id">
+
+  <div class="form-group">
+    <label for=name>Nome </label>
+    <input type="text" placeholder="Coloque o nome" name="training_name" [(ngModel)]="registro.training_name" required />
+  </div>
+
+  <div class="form-group">
+    <label>Carga horária </label>
+    <input type="number" placeholder="Carga Total"  name="training_workload" [(ngModel)]="registro.training_workload" required />
+  </div>
+
+  <div class="form-group">
+    <label>Data início </label>
+    <input type="date" placeholder="Início" name="training_start_date"  [(ngModel)]="registro.training_start_date" required />
+  </div>
+
+  <div class="form-group">
+    <label>Data termino </label>
+    <input type="date" placeholder="fim"  name="training_end_date" [(ngModel)]="registro.training_end_date" required />
+  </div>
+
+  <div class="form-group">
+<!--
+    <label for="training_coordinator">Coordenador Responsável</label>
+    <select name="user" [(ngModel)]="registro.training_coordinator" required>
+      <option [ngValue]="null">Selecione</option>
+      <option *ngFor="let item of user" [ngValue]="item">{{item.nomeUser}} </option>
+    </select> -->
+
+    <label for="training_coordinator">Coordenador da Capacitação</label>
+    <select [(ngModel)]="registro.user" [compareWith]="compareById" name="user" required>
+      <option [ngValue]="null">Selecione</option>
+      <option *ngFor="let item of user" [ngValue]="item">{{item.user_name}} </option>
+    </select>
+
+
+
+
+  </div>
+  <input type="submit" value="Cancel" routerLink="../">
+  <input type="submit" value="Save" [disabled]="form.invalid">
+
+</form>

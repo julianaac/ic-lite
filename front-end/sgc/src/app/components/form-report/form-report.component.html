@@ -1,0 +1,51 @@
+
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <h2>Cadastro de Relatórios</h2>
+    <input type="hidden" name="report_id" [(ngModel)]="registro.report_id">
+
+    <div class="form-group">
+      <label for=name>Conteúdo do Relatório </label>
+      <input type="text" placeholder="Coloque o relatório do conteúdo" name="report_name" [(ngModel)]="registro.report_content" required />
+    </div>
+
+    <!-- <div class="form-group">
+      <label>Relatório de Status</label>
+      <input type="number" placeholder="Coloque o relatório de Status"  name="report_identifier" [(ngModel)]="registro.report_status" required />
+    </div> -->
+
+    <div class="form-group">
+      <label for="typeReport">Tipo de Relatório</label>
+      <select [(ngModel)]="registro.typeReport"
+      [compareWith]="compareById"
+      name="typeReport" required>
+        <option *ngFor="let item of typeReport"
+        [ngValue]="item"> {{item.type_report_name}} </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="user">Usuário </label>
+      <select [(ngModel)]="registro.user"
+      [compareWith]="compareById"
+      name="user" required>
+        <option *ngFor="let item of user"
+        [ngValue]="item"> {{item.user_name}} </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="templateReport">Template do Relatório</label>
+      <select [(ngModel)]="registro.templateReport"
+      [compareWith]="compareById"
+      name="templateReport" required>
+        <option *ngFor="let item of templateReport"
+        [ngValue]="item"> {{item.template_report_name}} </option>
+      </select>
+    </div>
+
+    <input type="submit" value="Cancel" routerLink="../">
+    <input type="submit" value="Save" [disabled]="form.invalid">
+
+  </form>
+
+

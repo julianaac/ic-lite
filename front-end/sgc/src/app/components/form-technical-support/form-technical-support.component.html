@@ -1,0 +1,44 @@
+
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <h2>Suporte Técnico</h2>
+    <input type="hidden" name="technical_support_id" [(ngModel)]="registro.technical_support_id">
+
+    <div class="form-group">
+        <label for=name>Descrição do Suporte Técnico </label>
+        <input type="text" placeholder="Coloque a descrição do suporte técnico " name="technical_support_Description"
+            [(ngModel)]="registro.technical_support_description" required />
+    </div> 
+
+    <!-- AQUI INICIA O CÓDIGO DA CHAVE ESTRANGEIRA -->
+    <div class="form-group">
+        <label for="technical">Técnico </label>
+        <select [(ngModel)]="registro.technical" [compareWith]="compareById" name="technical" required>
+            <option *ngFor="let item of technical" [ngValue]="item"> {{item.user_name }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="teacher">Professor </label>
+        <select [(ngModel)]="registro.teacher" [compareWith]="compareById" name="teacher" required>
+            <option *ngFor="let item of teacher" [ngValue]="item"> {{item.user_name }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="laboratory">Laboratório </label>
+        <select [(ngModel)]="registro.laboratory" [compareWith]="compareById" name="laboratory" required>
+            <option *ngFor="let item of laboratory" [ngValue]="item"> {{item.laboratory_name }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="training">Capacitação </label>
+        <select [(ngModel)]="registro.training" [compareWith]="compareById" name="training" required>
+            <option *ngFor="let item of training" [ngValue]="item"> {{item.training_name }}</option>
+        </select>
+    </div>
+
+    <input type="submit" value="Cancel" routerLink="../">
+    <input type="submit" value="Save" [disabled]="form.invalid">
+
+</form>

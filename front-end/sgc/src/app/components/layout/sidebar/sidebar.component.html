@@ -1,0 +1,22 @@
+<div class="sidebar pe-4 pb-3" id="style-3" >
+  <nav class="navbar" >
+      <a href="index.html" class="navbar-brand">
+          <i class="logo"><img src="../assets/img/logoBranca.png"></i>
+      </a>
+      <div class="navbar-nav w-100">
+          <a routerLink="/home" class=".nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Home</a>
+          <a routerLink="/training" class="nav-item nav-link" *ngIf="!isAluno()"><i class="fa fa-th me-2"></i>Capacitações</a>
+          <a routerLink="/classroom" class="nav-item nav-link" *ngIf="!isAluno()"><i class="fa fa-keyboard me-2"></i>Turmas</a>
+          <a routerLink="/check" class="nav-item nav-link" *ngIf="!isCoord()" ><i class="fa fa-check-circle me-2"></i>Check-in</a>
+          <a routerLink="/report" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Relatorios</a>
+          <a routerLink="/teacher" class="nav-item nav-link" *ngIf="isCoord() || isProfessor()" ><i class="fas fa-chalkboard-teacher me-2"></i>Professor</a>
+          <a routerLink="/subject" class="nav-item nav-link" *ngIf="isCoord()"><i class="fa fa-graduation-cap me-2"></i>Disciplinas</a>
+          <a routerLink="/activity" class="nav-item nav-link"><i class="fa fa-gavel me-2"></i>Atividades</a>
+          <a routerLink="/socioeconomic" class="nav-item nav-link"><i class="fa fa-address-book me-2"></i>SocioEconômico</a>
+          <a routerLink="/config" class="nav-item nav-link" *ngIf="isCoord()"><i class="fa fa-cog me-2"></i>Configuração</a>
+
+
+
+      </div>
+  </nav>
+</div>

@@ -1,0 +1,33 @@
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <h2>Cadastro de Notas</h2>
+    <input type="hidden" name="grade_member_group_id" [(ngModel)]="registro.grade_member_group_id">
+    <div class="form-group">
+      <label for="grade_member_group_feedback">Feedback</label>
+      <input type="text" placeholder="Feedback da atividade"  name="grade_member_group_feedback" [(ngModel)]="registro.grade_member_group_feedback" required />
+    </div>
+    <div class="form-group">
+      <label for="grade_member_group_grade">Nota do Membro do grupo</label>
+      <input type="number" placeholder="Nota do estudante" name="grade_member_group_grade"  [(ngModel)]="registro.grade_member_group_grade" required />
+    </div>
+    <div class="form-group">
+      <label for="groupAnswer">Grupo</label>
+      <select [(ngModel)]="registro.groupAnswer"
+      [compareWith]="compareById"
+      name="groupAnswer" required>
+        <option *ngFor="let item of groupAnswer"
+        [ngValue]="item"> {{item.group.group_name}} </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="student">Estudante </label>
+      <select [(ngModel)]="registro.student"
+      [compareWith]="compareById"
+      name="student" required>
+        <option *ngFor="let item of student"
+        [ngValue]="item"> {{item.user.user_name}} </option>
+      </select>
+    </div>
+    <input type="submit" value="Cancel" routerLink="../">
+    <input type="submit" value="Save" [disabled]="form.invalid">
+
+  </form>

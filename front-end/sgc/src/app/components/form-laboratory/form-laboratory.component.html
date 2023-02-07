@@ -1,0 +1,23 @@
+<form (ngSubmit)="submit(form)" #form="ngForm" class="forms">
+  <h2>Cadastro de Laboratorios</h2>
+  <input type="hidden" name="laboratory_id" [(ngModel)]="registro.laboratory_id">
+
+  <div class="form-group">
+    <label for="laboratory_name">Nome </label>
+    <input type="text" placeholder="Coloque o nome do laboratório"  name="laboratory_name" [(ngModel)]="registro.laboratory_name" required />
+  </div>
+  <div class="form-group">
+    <label for="laboratory_localization">Localização </label>
+    <input type="text" placeholder="Coloque a localização do laboratório"  name="laboratory_localization" [(ngModel)]="registro.laboratory_localization" required />
+  </div>
+  <div class="form-group">
+    <label for="laboratory_open_time">Hora de Abertura</label>
+    <input type="time" placeholder="Coloque a localização do laboratório"  name="laboratory_open_time" [(ngModel)]="registro.laboratory_open_time" required />
+  </div>
+  <div class="form-group">
+    <label for="laboratory_close_time">Hora de Fechamento</label>
+    <input type="time" placeholder="Coloque a localização do laboratório"  name="laboratory_close_time" [(ngModel)]="registro.laboratory_close_time" required />
+  </div>
+<input type="button" value="Cancelar" routerLink="../">
+<input type="submit" value="salvar" [disabled]="form.invalid">
+</form>

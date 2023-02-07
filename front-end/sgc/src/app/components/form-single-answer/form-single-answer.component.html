@@ -1,0 +1,43 @@
+
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <h2>Resposta Individual</h2>
+    <input type="hidden" name="single_answer_id" [(ngModel)]="registro.single_answer_id">
+
+    <div class="form-group">
+        <label for=name>Conteúdo da Resposta </label>
+        <input type="text" placeholder="Coloque o Conteúdo da lista de resposta "name="single_answer_content" 
+            [(ngModel)]="registro.single_answer_content"
+            required />
+    </div>
+
+    <div class="form-group">
+        <label>FeedBack da Resposta</label>
+        <input type="text" placeholder="Coloque o feedback da lista de resposta" name="single_answer_feedback"
+            [(ngModel)]="registro.single_answer_feedback" required />
+    </div>
+
+    <div class="form-group">
+        <label>Nota da Resposta da Atividade</label>
+        <input type="number" placeholder="Coloque a lista de resposta do questionário" name="single_answer_grade"
+            [(ngModel)]="registro.single_answer_grade" required />
+    </div>
+
+
+    <div class="form-group">
+        <label for="user">Usuário </label>
+        <select [(ngModel)]="registro.user" [compareWith]="compareById" name="user" required>
+            <option *ngFor="let item of user" [ngValue]="item"> {{item.user_name}} </option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="task">Atividade </label>
+        <select [(ngModel)]="registro.task" [compareWith]="compareById" name="task" required>
+            <option *ngFor="let item of task" [ngValue]="item"> {{item.task_name}} </option>
+        </select>
+    </div>
+
+    <input type="submit" value="Cancel" routerLink="../">
+    <input type="submit" value="Save" [disabled]="form.invalid">
+
+</form>

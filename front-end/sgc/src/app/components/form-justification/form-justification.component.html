@@ -1,0 +1,43 @@
+
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <h2>justificativa</h2>
+    <input type="hidden" name="justification_id" [(ngModel)]="registro.justification_id">
+
+    <div class="form-group">
+        <label for=name>Texto de Justificativa </label>
+        <input type="text" placeholder="Coloque o texto de justificativa" name="justification_name"
+            [(ngModel)]="registro.justification_text" required />
+    </div>
+
+    <div class="form-group">
+        <label>Arquivo de Justificação</label>
+        <input type="text" placeholder="Coloque o arquivo de justificativa" name="justification_identifier"
+            [(ngModel)]="registro.justification_file" required />
+    </div>
+
+    <div class="form-group">
+        <label for="student">Estudante</label>
+        <select [(ngModel)]="registro.student" [compareWith]="compareById" name="student" required>
+            <option *ngFor="let item of student" [ngValue]="item"> {{item.user.user_name}} </option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="recordClass">Registro de Aula </label>
+        <select [(ngModel)]="registro.recordClass" [compareWith]="compareById" name="recordClass" required>
+            <option *ngFor="let item of recordClass" [ngValue]="item"> {{item.record_class_id}} </option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="absence">Faltas</label>
+        <select [(ngModel)]="registro.absence" [compareWith]="compareById" name="absence" required>
+            <option *ngFor="let item of absence" [ngValue]="item"> {{item.absence_id}}
+            </option>
+        </select>
+    </div>
+
+    <input type="submit" value="Cancel" routerLink="../">
+    <input type="submit" value="Save" [disabled]="form.invalid">
+
+</form>

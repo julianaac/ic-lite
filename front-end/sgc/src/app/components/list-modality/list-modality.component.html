@@ -1,0 +1,29 @@
+
+<table class="table table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of registros">
+        <td> {{ item.modality_id }} </td>
+        <td> {{ item.modality_code }} </td>
+        <td> {{ item.modality_name}} </td>
+        <td>
+            <a routerLink="modality/form" [queryParams]="{ id: item.modality_id}" class="botao">Editar</a>
+            <a (click)="delete(item.modality_id)" class="botao excluir">Excluir</a>
+        </td>
+  
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="9">Total de registros: {{ registros.length }} </td>
+      </tr>
+    </tfoot>
+  </table>
+  

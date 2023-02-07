@@ -1,0 +1,42 @@
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <h2>Cadastro de Avisos</h2>
+    <input type="hidden" name="notice_id" [(ngModel)]="registro.notice_id">
+    <div class="form-group">
+      <label for="notice_title">Título do Aviso</label>
+      <input type="text" placeholder="Coloque o nome do equipamento" name="notice_title" [(ngModel)]="registro.notice_title" required />
+    </div>
+    <div class="form-group">
+      <label for="notice_text">Escreva o Aviso</label>
+      <input type="text" placeholder="Descrição da Notícia" name="notice_text"  [(ngModel)]="registro.notice_text" required />
+    </div>
+    <div class="form-group">
+      <label for="typeNotice">Tipo de aviso</label>
+      <select [(ngModel)]="registro.typeNotice"
+      [compareWith]="compareById"
+      name="typeNotice" required>
+        <option *ngFor="let item of typeNotice"
+        [ngValue]="item"> {{item.type_notice_name}} </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="training">Capacitação</label>
+      <select [(ngModel)]="registro.training"
+      [compareWith]="compareById"
+      name="training" required>
+        <option *ngFor="let item of training"
+        [ngValue]="item"> {{item.training_name}} </option>
+      </select>
+    </div>
+    <div class="form-group">
+        <label for="classroom">Turma</label>
+        <select [(ngModel)]="registro.classroom"
+        [compareWith]="compareById"
+        name="classroom" required>
+          <option *ngFor="let item of classroom"
+          [ngValue]="item"> {{item.classroom_name}} </option>
+        </select>
+      </div>
+    <input type="submit" value="Cancel" routerLink="../">
+    <input type="submit" value="Save" [disabled]="form.invalid">
+
+  </form>

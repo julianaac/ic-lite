@@ -1,0 +1,106 @@
+
+
+<div  class="container-fluid position-relative d-flex p-0" >
+  <app-sidebar></app-sidebar>
+
+
+  <!-- Content Start -->
+  <div class="content">
+      <!-- Navbar Start -->
+      <app-header></app-header>
+      <!-- Navbar End -->
+      <div class="container-fluid pt-4 px-4">
+        <div class="row g-4">
+            <div class="col-sm-12 col-xl-12">
+                <div class="main">
+                    <div class="header col-12">
+                        <div class="ms-3">
+                            <h3>CHECK-IN & CHECK-OUT</h3>
+                            <p>UFAC - 2023</p>
+                        </div>
+                        <i class="icon"><img src="../../../../assets/img/icon.png"></i>
+                    </div>
+                    <div class="container">
+                      <div class="checkin pt-5">
+                        <div class="row testeCheckin">
+                          <div class="col-6 ">
+                            <h2 class="pb-3">Faça o Check-In/Check-Out</h2>
+                            <button type="button"id="open-modal"  class="btn-entry"><i class="bi bi-check-circle-fill fa-2x"></i><div  id="check-in">CHECK-IN</div></button>
+                            <button type="button" id="open-modal1" class="btn-exit"><i class="bi bi-x-circle-fill fa-2x"></i><div id="check-out">CHECK-OUT</div></button>
+                          </div>
+                          <div class="col-6 gif empty " *ngIf="!this.checkincurrent">
+                            <h2>Faça o checkin!</h2>
+                            <img src="../../../../assets/img/duvida.gif">
+                          </div>
+                          <div class="col-6 gif sucess " *ngIf="this.checkincurrent && this.check.checkin_status == 1">
+                            <h2>Check-in Reazado!</h2>
+                            <img src="../../../../assets/img/sucess.gif">
+                          </div>
+                          <div class="col-6 gif sucess " *ngIf="this.checkincurrent && this.check.checkin_status == 2">
+                            <h2>Check-Out Reazado!</h2>
+                            <img src="../../../../assets/img/sucess.gif">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="listHisto">
+                        <div class="row">
+                          <div class="col-12">
+                            <h2>Total de Horas no Lab - Mês: Janeiro</h2>
+
+                          </div>
+                      </div>
+                    </div>
+
+
+
+
+
+                    <div class="modalCheck">
+                      <div id="fade" class="hide"></div>
+                      <div id="modal" class="hide">
+                        <div class="modal-header">
+                          <h2>Faça o Check-in</h2>
+                          <button  class="btn btn-info" id="close-modal">Fechar</button>
+                        </div>
+
+                        <div class="modal-body">
+                          <app-alert></app-alert>
+                          <app-form-checkin></app-form-checkin>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="modalCheck1">
+                      <div id="fade1" class="hide1"></div>
+                      <div id="modal1" class="hide1">
+                        <div class="modal-header1">
+                          <h2>Faça o Check-Out</h2>
+                          <button id="close-modal1">Fechar</button>
+                        </div>
+
+                        <div class="modal-body1">
+                          <app-alert></app-alert>
+                          <app-form-checkout></app-form-checkout>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- <app-form-team></app-form-team> -->
+            <app-footer></app-footer>
+
+
+        </div>
+      </div>
+
+      <!-- Footer Start -->
+      <!-- Footer End -->
+  </div>
+  <!-- Content End -->
+</div>
+  <!-- Back to Top -->
+  <a href="#" class="btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+

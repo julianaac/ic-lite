@@ -1,0 +1,231 @@
+.container h2{
+  color: black;
+  font-size: 20px;
+  margin-top: 50px;
+}
+.sucess h2{
+  background-color: #7dd29f;
+  border-radius: 10px;
+  padding: 20px;
+}
+/* GIF  */
+.gif img{
+  width: 300px;
+}
+.empty h2{
+  background-color: #bf6a6a;
+  border-radius: 10px;
+  padding: 20px;
+}
+.gif{
+  /* margin-left: 150px; */
+  padding-bottom: 30px;
+  border-radius: 20px;
+}
+/* BUTTON CHECK-IN AND CHECK-OUT - START */
+.btn-entry{
+  background-color: rgb(42, 52, 122);
+  border-color: aliceblue;
+  width: 200px;
+  height: 150px;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+.btn-exit{
+  background-color: rgb(146, 37, 29);
+  border-color: aliceblue;
+  width: 200px;
+  height: 150px;
+  border-radius: 20px;
+
+}
+.checkin{
+  width: 100%;
+  margin-top: 30px;
+  padding-bottom: 40px;
+  border-radius: 20px;
+}
+.btn-entry:hover{
+  background-color: rgb(42, 51, 107);
+}
+
+.bi-check-circle-fill:hover{
+  color: rgb(44, 99, 58);
+
+}
+
+#check-in{
+  font-family: Sans-serif;
+}
+
+#check-in::before{
+  color: rgb(3, 204, 3);
+}
+
+
+.btn-exit:hover{
+  background-color: rgb(125, 50, 50);
+}
+
+.bi-x-circle-fill:hover{
+  color: rgb(197, 90, 90);
+}
+
+#check-out{
+  font-family: Sans-serif;
+}
+
+@media (min-width: 368px) and (max-width: 768px){
+  #btn-primary {
+    background-color: green;
+    border-color: aliceblue;
+    width: 300px;
+    height: 100px;
+    justify-content: center;
+  }
+
+  #check-in{
+    display: none;
+  }
+
+  #btn-secondary{
+    background-color: red;
+    border-color: aliceblue;
+    width: 300px;
+    height: 100px;
+  }
+
+  #check-out{
+    display: none;
+  }
+
+
+}
+
+/* BUTTON CHECK-IN AND CHECK-OUT - END */
+
+
+/* MODAL  */
+.close-modal{
+  background-color: cadetblue;
+}
+#fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+#modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  max-height: 100%;
+  max-width: 50%;
+  background-color: #f1f1f1;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  z-index: 10;
+
+}
+
+#fade,
+#modal {
+  transition: 0.5s;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-header {
+  padding-top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+
+}
+.modal-header h2{
+  color: #000;
+  font-size: 25px;
+}
+
+.modal-body p {
+  margin-bottom: 1rem;
+}
+
+#modal.hide,
+#fade.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#modal.hide {
+  top: 0;
+}
+
+
+/* MODAL 2 */
+
+
+#fade1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+#modal1 {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  max-width: 90%;
+  background-color: #fff;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  z-index: 10;
+}
+
+#fade1,
+#modal1 {
+  transition: 0.5s;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+
+}
+.modal-header1 h2{
+  color: #000;
+  font-size: 25px;
+}
+
+.modal-body1 p {
+  margin-bottom: 1rem;
+}
+
+#modal1.hide1,
+#fade1.hide1 {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#modal1.hide1 {
+  top: 0;
+}

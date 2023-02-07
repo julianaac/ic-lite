@@ -1,0 +1,37 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Nome</th>
+        <th>Logo</th>
+        <th>Programa</th>
+        <th>Instituição</th>
+        <th>Unidade</th>
+        <th>Tipo de relatório</th>
+        <th>Responsável</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of registros">
+        <td> {{ item.template_report_id }} </td>
+        <td> {{ item.template_report_name }} </td>
+        <td> {{ item.template_report_logo }} </td>
+        <td> {{ item.template_report_program }} </td>
+        <td> {{ item.template_report_instituition }} </td>
+        <td> {{ item.template_report_unit }} </td>
+        <td> {{ item.typeReport.type_report_name }} </td>
+        <td> {{ item.user.user_name }} </td>
+        <td class="fit">
+          <button routerLink="/report/form" type="button" [queryParams]="{ id: item.template_report_id }"  class="btn btn-secondary">Editar</button>
+          <button type="button"(click)="delete(item.template_report_id)" class="btn btn-danger">Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="9">Total de registros: {{ registros.length }} </td>
+      </tr>
+    </tfoot>
+  </table>
+  

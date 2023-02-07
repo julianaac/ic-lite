@@ -1,0 +1,31 @@
+
+<table class="table table" id="tableEquipment">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Data de Entrada</th>
+        <th>Data de Saída</th>
+        <th>Sala de Aula</th>
+        <th>Disciplina</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of registros">
+        <td> {{ item.record_class_date_entry }} </td>
+        <td> {{ item.record_class_date_exit }} </td>
+        <td> {{ item.classroom.classroom_name }} </td>
+        <td> {{ item.subject.subject_name }} </td>
+        <td class="fit">
+          <button routerLink="/report/form" type="button" [queryParams]="{ id: item.record_class_id }"  class="btn btn-secondary">Editar</button>
+          <button type="button"(click)="delete(item.record_class_id)" class="btn btn-danger">Deletar</button>
+
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="9">Total de registros: {{ registros.length }} </td>
+      </tr>
+    </tfoot>
+  </table>

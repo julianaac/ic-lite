@@ -1,0 +1,33 @@
+
+<table class="table table" id="tableEquipment">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Título</th>
+        <th>Descrição</th>
+        <th>Capacitação</th>
+        <th>Tipo</th>
+        <th>Sala de Aula</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of registros">
+        <td> {{ item.notice_title }} </td>
+        <td> {{ item.notice_text }} </td>
+        <td> {{ item.training.training_name }} </td>
+        <td> {{ item.typeNotice.type_notice_name }} </td>
+        <td> {{ item.classroom.classroom_name }} </td>
+        <td class="fit">
+          <button routerLink="/report/form" type="button" [queryParams]="{ id: item.notice_id }"  class="btn btn-secondary">Editar</button>
+          <button type="button"(click)="delete(item.notice_id)" class="btn btn-danger">Deletar</button>
+
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="9">Total de registros: {{ registros.length }} </td>
+      </tr>
+    </tfoot>
+  </table>

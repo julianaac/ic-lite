@@ -1,0 +1,44 @@
+
+
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <h2>Avaliação do Estudante</h2>
+    <input type="hidden" name="student_evaluation_id" [(ngModel)]="registro.student_evaluation_id">
+    <div class="form-group">
+        <label for=student_evaluation_is_answer>Avaliação foi respondida?</label>
+          <input type="radio" name="student_evaluation_is_answer" value="true" [(ngModel)]="registro.student_evaluation_is_answer" required> Sim
+          <input type="radio" name="student_evaluation_is_answer" value="false" [(ngModel)]="registro.student_evaluation_is_answer" required> Não
+    </div>
+
+    <!-- AQUI INICIA O CÓDIGO DA CHAVE ESTRANGEIRA -->
+    <div class="form-group">
+        <label for="Subject">Disciplina </label>
+        <select [(ngModel)]="registro.subject" [compareWith]="compareById" name="subject" required>
+            <option *ngFor="let item of subject" [ngValue]="item"> {{item.subject_name }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="Student">Estudante </label>
+        <select [(ngModel)]="registro.student" [compareWith]="compareById" name="student" required>
+            <option *ngFor="let item of student" [ngValue]="item"> {{item.user.user_name }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="Teacher">Professor </label>
+        <select [(ngModel)]="registro.teacher" [compareWith]="compareById" name="teacher" required>
+            <option *ngFor="let item of teacher" [ngValue]="item"> {{item.user.user_name }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="training">Capacitação </label>
+        <select [(ngModel)]="registro.training" [compareWith]="compareById" name="training" required>
+            <option *ngFor="let item of training" [ngValue]="item"> {{item.training_name }}</option>
+        </select>
+    </div>
+
+    <input type="submit" value="Cancel" routerLink="../">
+    <input type="submit" value="Save" [disabled]="form.invalid">
+
+</form>

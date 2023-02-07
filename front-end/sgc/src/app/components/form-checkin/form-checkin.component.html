@@ -1,0 +1,23 @@
+<form (ngSubmit)="submit(form)" #form="ngForm">
+
+  <div class="form-group">
+    <label for=checkin_id>Seu Id</label>
+    <input  type="text" value={{getUser().user_id}} name="student" readonly="true">
+  </div>
+
+  <label>Horario atual <span><label> {{this.dateTime}}</label></span></label><br>
+  <div class="form-group">
+    <label for="checkin_entry">HORARIO DE ENTRADA</label>
+    <input type="text" name="checkin_entry" value={{this.dateTime}} readonly="true">
+  </div>
+  <div class="form-group">
+    <label for=student>Nome Completo </label>
+    <input type="text" value={{getUser().user_name}} name="student" readonly="true">
+  </div>
+  <div class="form-group">
+    <label for=subject>Disciplina</label>
+    <input  type="text" value={{this.subject.subject_name}} name="subject">
+  </div>
+
+  <input type="submit" value="Check-in" [disabled]="form.invalid">
+</form>

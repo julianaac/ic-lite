@@ -1,0 +1,181 @@
+
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <h2>Informações Socioecononicas</h2>
+    <input type="hidden" name="socioeconomic_information_id" [(ngModel)]="registro. socioeconomic_information_id">
+
+    <div class="form-group">
+        <label for=socioeconomic_information_genre>Genero</label>
+        <div class="radio-item">
+            <input id="masculino" type="radio" value="masculino" name="socioeconomic_information_genre"  [(ngModel)]="registro.socioeconomic_information_genre" required>
+            <label class="custom-control-label" for="masculino">Masculino</label>
+         </div>
+       
+         <div class="radio-item">
+            <input id="femenino" type="radio" value="femenino" name="socioeconomic_information_genre"  [(ngModel)]="registro.socioeconomic_information_genre" required>
+            <label for="femenino">Femenino</label>
+         </div>
+          <!-- <input type="radio" name="socioeconomic_information_genre" value="masculino" [(ngModel)]="registro.socioeconomic_information_genre" required> Masculino
+          <input type="radio" name="socioeconomic_information_genre" value="femenino" [(ngModel)]="registro.socioeconomic_information_genre" required> Femenino -->
+    </div>
+
+    <div class="form-group">
+        <label for="  socioeconomic_information_birth_date">Data de Nascimento</label>  
+        <input type="date" placeholder="Coloque o nome" name="  socioeconomic_information_birth_date"
+            [(ngModel)]="registro.socioeconomic_information_birth_date" required />
+    </div>
+
+    <div class="form-group">
+        <label for=" socioeconomic_information_ethnicity">Cor/etnia</label> 
+          <input type="radio" name="socioeconomic_information_ethnicity" value="branco" [(ngModel)]="registro.socioeconomic_information_ethnicity" required> Branco(a)
+          <input type="radio" name="socioeconomic_information_ethnicity" value="pardo" [(ngModel)]="registro.socioeconomic_information_ethnicity" required> Pardo(a)
+          <input type="radio" name="socioeconomic_information_ethnicity" value="preto" [(ngModel)]="registro.socioeconomic_information_ethnicity" required> Preto(a)
+          <input type="radio" name="socioeconomic_information_ethnicity" value="amarelo" [(ngModel)]="registro.socioeconomic_information_ethnicity" required> Amarelo(a)
+          <input type="radio" name="socioeconomic_information_ethnicity" value="indigena" [(ngModel)]="registro.socioeconomic_information_ethnicity" required> Indígena
+    </div>
+
+    <div class="form-group">
+        <label for=" socioeconomic_information_marital_status">Estado Civil</label> 
+        <input type="text" placeholder="Coloque o nome" name=" socioeconomic_information_marital_status"
+            [(ngModel)]="registro.socioeconomic_information_marital_status" required />
+    </div>
+
+    <div class="form-group">
+        <label for=" socioeconomic_information_where_live">Tipo de Moradia</label> 
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_where_live"
+            [(ngModel)]="registro.socioeconomic_information_where_live" required />
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_number_people_home">Quantas pessoas moram na casa</label> 
+        <input type="number" placeholder="Coloque o nome" name="socioeconomic_information_number_people_home"
+            [(ngModel)]="registro.socioeconomic_information_number_people_home" required />
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_economic_participation">Localização </label> 
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_economic_participation"
+            [(ngModel)]="registro.socioeconomic_information_economic_participation" required />
+    </div>
+    
+    <div class="form-group">
+        <label for="socioeconomic_information_number_children">Localização </label> 
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_number_children"
+            [(ngModel)]="registro.socioeconomic_information_number_children" required />
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_means_transport">Localização </label> 
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_means_transport"
+            [(ngModel)]="registro.socioeconomic_information_means_transport" required />
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_if_remunerated">Genero</label>
+          <input type="radio" name="socioeconomic_information_if_remunerated" value="true" [(ngModel)]="registro.socioeconomic_information_if_remunerated" required> Sim
+          <input type="radio" name="socioeconomic_information_if_remunerated" value="false" [(ngModel)]="registro.socioeconomic_information_if_remunerated" required> Não
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_employment_relationship">Localização </label> 
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_employment_relationship"
+            [(ngModel)]="registro.socioeconomic_information_employment_relationship" required />
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_where_work">Localização </label> 
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_where_work"
+            [(ngModel)]="registro.socioeconomic_information_where_work" required />
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_monthly_income">Localização </label> 
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_monthly_income"
+            [(ngModel)]="registro.socioeconomic_information_monthly_income" required />
+    </div>
+    
+    <div class="form-group">
+        <label for="socioeconomic_information_where_elementary_school">Localização </label> 
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_where_elementary_school"
+            [(ngModel)]="registro.socioeconomic_information_where_elementary_school" required />
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_where_college">Localização </label> 
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_where_college"
+            [(ngModel)]="registro.socioeconomic_information_where_college" required />
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_formation_area">Localização </label> 
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_formation_area"
+            [(ngModel)]="registro.socioeconomic_information_formation_area" required />
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_formation_father">Localização </label> 
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_formation_father"
+            [(ngModel)]="registro.socioeconomic_information_formation_father" required />
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_formation_mother">Localização </label> socioeconomic_information_formation_mother
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_formation_mother"
+            [(ngModel)]="registro.socioeconomic_information_formation_mother" required />
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_work_father">Localização </label> socioeconomic_information_work_father
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_work_father"
+            [(ngModel)]="registro.socioeconomic_information_work_father" required />
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_position_work_father">Localização </label> socioeconomic_information_position_work_father
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_position_work_father"
+            [(ngModel)]="registro.socioeconomic_information_position_work_father" required />
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_work_mother">Localização </label> socioeconomic_information_work_mother
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_work_mother"
+            [(ngModel)]="registro.socioeconomic_information_work_mother" required />
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_position_work_mother">Localização </label> socioeconomic_information_position_work_mother
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_position_work_mother"
+            [(ngModel)]="registro.socioeconomic_information_position_work_mother" required />
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_access_technology">Localização </label> socioeconomic_information_access_technology
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_access_technology"
+            [(ngModel)]="registro.socioeconomic_information_access_technology" required />
+    </div>
+    <div class="form-group">
+        <label for="socioeconomic_information_if_access_internet">Genero</label>
+          <input type="radio" name="socioeconomic_information_if_access_internet" value="true" [(ngModel)]="registro.socioeconomic_information_if_access_internet" required> Sim
+          <input type="radio" name="socioeconomic_information_if_access_internet" value="false" [(ngModel)]="registro.socioeconomic_information_if_access_internet" required> Não
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_motivation">Localização </label> socioeconomic_information_motivation
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_motivation"
+            [(ngModel)]="registro.socioeconomic_information_motivation" required />
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_time_avaliability">Localização </label> socioeconomic_information_time_avaliability
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_time_avaliability"
+            [(ngModel)]="registro.socioeconomic_information_time_avaliability" required />
+    </div>
+
+    <div class="form-group">
+        <label for="socioeconomic_information_where_know">Localização </label> socioeconomic_information_where_know
+        <input type="text" placeholder="Coloque o nome" name="socioeconomic_information_where_know"
+            [(ngModel)]="registro.socioeconomic_information_where_know" required />
+    </div>
+
+    <input type="button" value="Cancelar" routerLink="../">
+    <input type="submit" value="salvar" [disabled]="form.invalid">
+</form>

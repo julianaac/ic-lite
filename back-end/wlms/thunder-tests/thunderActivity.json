@@ -1,0 +1,89 @@
+[
+  {
+    "_id": "d990d9c0-57c9-4180-9c94-c9a4bfe13e26",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:9000/absence/",
+    "url": "http://localhost:9000/absence/",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-01-10T23:06:37.889Z",
+    "modified": "2023-01-10T23:06:37.889Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "c39caadc-fe0b-40a7-b2b1-dc96b62fedbe",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:9000/user/",
+    "url": "https://localhost:9000/user/",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-01-10T23:07:16.895Z",
+    "modified": "2023-01-12T01:30:45.603Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "Anonimo",
+        "password": "123"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "fcbe763d-2a96-43f8-ad8c-b6e256fc0d0a",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:9000/user/",
+    "url": "http://localhost:9000/user/",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-01-10T23:10:17.762Z",
+    "modified": "2023-01-10T23:15:13.925Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n   \n    \"user_name\": \"test\",\n    \"user_user\": \"test\",\n    \"user_password\": \"123\",\n    \"user_cpf\": \"66688899944\",\n    \"user_registration\": \"aaaa\",\n    \"user_curriculum_vitae\": \"\",\n    \"user_email\": \"email@gmail.com\",\n    \"user_git\": null,\n    \"user_telephone\": \"5568999123548\",\n    \"user_small_bibliography\": \"\",\n    \"situation\": {\n      \"situation_id\": 1,\n      \"situation_name\": \"Ativo\"\n    },\n    \"typeUser\": {\n      \"type_user_id\": 1,\n      \"type_user_name\": \"Coordenador do Projeto\"\n    }\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "159854aa-cec1-41e3-9606-2c260e705961",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:9000/user/",
+    "url": "http://localhost:9000/user/",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-01-10T23:21:43.880Z",
+    "modified": "2023-01-10T23:22:12.743Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"user_id\": 79,\n  \"user_name\": \"test\",\n  \"user_user\": \"modifiquei\",\n  \"user_password\": \"123\",\n  \"user_cpf\": \"66688899944\",\n  \"user_registration\": \"aaaa\",\n  \"user_curriculum_vitae\": \"\",\n  \"user_email\": \"email@gmail.com\",\n  \"user_git\": null,\n  \"user_telephone\": \"5568999123548\",\n  \"user_small_bibliography\": \"\",\n  \"situation\": {\n    \"situation_id\": 1,\n    \"situation_name\": \"Ativo\"\n  },\n  \"typeUser\": {\n    \"type_user_id\": 1,\n    \"type_user_name\": \"Coordenador do Projeto\"\n  }\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "d6fe2c31-542b-4355-8438-fcb6e5de378a",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:9000/user/79",
+    "url": "http://localhost:9000/user/79/4",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-01-10T23:23:39.964Z",
+    "modified": "2023-01-10T23:34:34.369Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]

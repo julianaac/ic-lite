@@ -1,0 +1,34 @@
+<table class="table table" id="tableEquipment">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Data de Início</th>
+        <th>Data de Término</th>
+        <th>Tipo de Tecnologia</th>
+        <th>Time</th>
+        <th>Usuário</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of registros">
+        <td> {{ item.sprint_name }} </td>
+        <td> {{ item.sprint_start_date }} </td>
+        <td> {{ item.sprint_end_date }} </td>
+        <td> {{ item.sprint_technology_ids }} </td>
+        <td> {{ item.team.team_name }} </td>
+        <td> {{ item.user.user_name }} </td>
+        <td class="fit">
+          <button routerLink="/report/form" type="button" [queryParams]="{ id: item.sprint_id }"  class="btn btn-secondary">Editar</button>
+          <button type="button"(click)="delete(item.sprint_id)" class="btn btn-danger">Deletar</button>
+
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="9">Total de registros: {{ registros.length }} </td>
+      </tr>
+    </tfoot>
+</table>

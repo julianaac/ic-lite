@@ -1,0 +1,254 @@
+<!-- evaluation_answer_id: number;
+evaluation_answer_name: string;
+evaluation_answer_email: string;
+evaluation_answer_goal_achieved: number;
+evaluation_answer_depth_topic: number;
+evaluation_answer_satisfactory_material:number;
+evaluation_answer_practical_activity:number;
+evaluation_answer_mastery_teacher:number;
+evaluation_answer_discussion_environment:number;
+evaluation_answer_teacher_didactic:number;
+evaluation_answer_ask_question:number;
+evaluation_answer_satisfactory_learning:number;
+evaluation_answer_satisfactory_frequency:number;
+evaluation_answer_satisfactory_infrastructure:number;
+evaluation_answer_satisfactory_themes:number;
+evaluation_answer_is_prerequisite:boolean; //este era tinyint(1) no bd.
+evaluation_answer_prerequisite:string;
+subject:Subject; //fk
+teacher:Teacher; //fk -->
+
+
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <h2>Resposta da Avaliação</h2>
+    <input type="hidden" name="evaluation_answer_id" [(ngModel)]="registro.evaluation_answer_id">
+
+    <div class="form-group">
+        <label for=name>Nome (Opcional) </label>
+        <input type="text" placeholder="Escrever nome" name="evaluation_answer_name"
+            [(ngModel)]="registro.evaluation_answer_name" required />
+    </div>
+
+    <div class="form-group">
+        <label for=name>Email(Opcional)</label>
+        <input type="text" placeholder="Escrever Email" name="evaluation_answer_email"
+            [(ngModel)]="registro.evaluation_answer_email" required />
+    </div>
+
+    <div class="form-group">
+        <label for=name>Na sua avaliação, os objetivos da disciplina foram alcançados? </label>
+        <label for=evaluation_answer_goal_achieved>Tópico de Aprofundamento da Resposta da Avaliação </label>
+        <input type="radio" name="evaluation_answer_goal_achieved" value="1" [(ngModel)]="registro.evaluation_answer_goal_achieved" required> 1 - Discordo Totalmente
+        <input type="radio" name="evaluation_answer_goal_achieved" value="2" [(ngModel)]="registro.evaluation_answer_goal_achieved" required> 2 - Discordo Parcialmente
+        <input type="radio" name="evaluation_answer_goal_achieved" value="3" [(ngModel)]="registro.evaluation_answer_goal_achieved" required> 3 - Nem concordo, nem discordo
+        <input type="radio" name="evaluation_answer_goal_achieved" value="4" [(ngModel)]="registro.evaluation_answer_goal_achieved" required> 4 - Concordo Parcialmente
+        <input type="radio" name="evaluation_answer_goal_achieved" value="5" [(ngModel)]="registro.evaluation_answer_goal_achieved" required> 5 - Concordo Totalmente
+        
+    </div>
+
+    <div class="form-group">
+        <label for=evaluation_answer_depth_topic>Na sua avaliação, considera satisfatório a profundidade do tema tratado na disciplina?</label>
+        <input type="radio" name="evaluation_answer_depth_topic" value="1" [(ngModel)]="registro.evaluation_answer_depth_topic" required> 1 - Discordo Totalmente
+        <input type="radio" name="evaluation_answer_depth_topic" value="2" [(ngModel)]="registro.evaluation_answer_depth_topic" required> 2 - Discordo Parcialmente
+        <input type="radio" name="evaluation_answer_depth_topic" value="3" [(ngModel)]="registro.evaluation_answer_depth_topic" required> 3 - Nem concordo, nem discordo
+        <input type="radio" name="evaluation_answer_depth_topic" value="4" [(ngModel)]="registro.evaluation_answer_depth_topic" required> 4 - Concordo Parcialmente
+        <input type="radio" name="evaluation_answer_depth_topic" value="5" [(ngModel)]="registro.evaluation_answer_depth_topic" required> 5 - Concordo Totalmente
+
+    </div>
+
+    <div class="form-group">
+        <label for=name>Na sua avaliação, o material disponibilizado para a disciplina foi satisfatório? </label>
+        <input type="radio" name="evaluation_answer_satisfactory_material" value="1" [(ngModel)]="registro.evaluation_answer_satisfactory_material"
+            required> 1 - Discordo Totalmente
+        <input type="radio" name="evaluation_answer_satisfactory_material" value="2" [(ngModel)]="registro.evaluation_answer_satisfactory_material"
+            required> 2 - Discordo Parcialmente
+        <input type="radio" name="evaluation_answer_satisfactory_material" value="3" [(ngModel)]="registro.evaluation_answer_satisfactory_material"
+            required> 3 - Nem concordo, nem discordo
+        <input type="radio" name="evaluation_answer_satisfactory_material" value="4" [(ngModel)]="registro.evaluation_answer_satisfactory_material"
+            required> 4 - Concordo Parcialmente
+        <input type="radio" name="evaluation_answer_satisfactory_material" value="5" [(ngModel)]="registro.evaluation_answer_satisfactory_material"
+            required> 5 - Concordo Totalmente
+    </div>
+
+    <div class="form-group">
+        <label for=name>Atividade Prática como Resposta da Avaliação </label>
+                <input type="radio" name="evaluation_answer_practical_activity" value="1"
+                    [(ngModel)]="registro.evaluation_answer_practical_activity" required> 1 - Discordo Totalmente
+                <input type="radio" name="evaluation_answer_practical_activity" value="2"
+                    [(ngModel)]="registro.evaluation_answer_practical_activity" required> 2 - Discordo Parcialmente
+                <input type="radio" name="evaluation_answer_practical_activity" value="3"
+                    [(ngModel)]="registro.evaluation_answer_practical_activity" required> 3 - Nem concordo, nem discordo
+                <input type="radio" name="evaluation_answer_practical_activity" value="4"
+                    [(ngModel)]="registro.evaluation_answer_practical_activity" required> 4 - Concordo Parcialmente
+                <input type="radio" name="evaluation_answer_practical_activity" value="5"
+                    [(ngModel)]="registro.evaluation_answer_practical_activity" required> 5 - Concordo Totalmente
+
+    </div>
+
+    <div class="form-group">
+        <label for=name>Na sua avaliação, o professor possui o domínio sobre o conteúdo da disciplina ministrada? </label>
+        <input type="radio" name="evaluation_answer_mastery_teacher" value="1"
+            [(ngModel)]="registro.evaluation_answer_mastery_teacher" required> 1 - Discordo Totalmente
+        <input type="radio" name="evaluation_answer_mastery_teacher" value="2"
+            [(ngModel)]="registro.evaluation_answer_mastery_teacher" required> 2 - Discordo Parcialmente
+        <input type="radio" name="evaluation_answer_mastery_teacher" value="3"
+            [(ngModel)]="registro.evaluation_answer_mastery_teacher" required> 3 - Nem concordo, nem discordo
+        <input type="radio" name="evaluation_answer_mastery_teacher" value="4"
+            [(ngModel)]="registro.evaluation_answer_mastery_teacher" required> 4 - Concordo Parcialmente
+        <input type="radio" name="evaluation_answer_mastery_teacher" value="5"
+            [(ngModel)]="registro.evaluation_answer_mastery_teacher" required> 5 - Concordo Totalmente
+
+    </div>
+
+    <div class="form-group">
+        <label for=name>Na sua avaliação, o professor criou um ambiente de discussão, participação durante as aulas? </label>
+        
+        <input type="radio" name="evaluation_answer_discussion_environment" value="1"
+            [(ngModel)]="registro.evaluation_answer_discussion_environment" required> 1 - Discordo Totalmente
+        <input type="radio" name="evaluation_answer_discussion_environment" value="2"
+            [(ngModel)]="registro.evaluation_answer_discussion_environment" required> 2 - Discordo Parcialmente
+        <input type="radio" name="evaluation_answer_discussion_environment" value="3"
+            [(ngModel)]="registro.evaluation_answer_discussion_environment" required> 3 - Nem concordo, nem discordo
+        <input type="radio" name="evaluation_answer_discussion_environment" value="4"
+            [(ngModel)]="registro.evaluation_answer_discussion_environment" required> 4 - Concordo Parcialmente
+        <input type="radio" name="evaluation_answer_discussion_environment" value="5"
+            [(ngModel)]="registro.evaluation_answer_discussion_environment" required> 5 - Concordo Totalmente
+
+    </div>
+
+
+    <div class="form-group">
+        <label for=name>Na sua opinião, a didática do professor foi satisfatória? </label>
+
+        <input type="radio" name="evaluation_answer_teacher_didactic" value="1"
+            [(ngModel)]="registro.evaluation_answer_teacher_didactic" required> 1 - Discordo Totalmente
+        <input type="radio" name="evaluation_answer_teacher_didactic" value="2"
+            [(ngModel)]="registro.evaluation_answer_teacher_didactic" required> 2 - Discordo Parcialmente
+        <input type="radio" name="evaluation_answer_teacher_didactic" value="3"
+            [(ngModel)]="registro.evaluation_answer_teacher_didactic" required> 3 - Nem concordo, nem discordo
+        <input type="radio" name="evaluation_answer_teacher_didactic" value="4"
+            [(ngModel)]="registro.evaluation_answer_teacher_didactic" required> 4 - Concordo Parcialmente
+        <input type="radio" name="evaluation_answer_teacher_didactic" value="5"
+            [(ngModel)]="registro.evaluation_answer_teacher_didactic" required> 5 - Concordo Totalmente
+
+    </div>
+
+
+    <div class="form-group">
+        <label for=name>Na sua avaliação, o professor conseguiu tirar as dúvidas apresentadas durante as aulas? </label>
+
+        <input type="radio" name="evaluation_answer_ask_question" value="1"
+            [(ngModel)]="registro.evaluation_answer_ask_question" required> 1 - Discordo Totalmente
+        <input type="radio" name="evaluation_answer_ask_question" value="2"
+            [(ngModel)]="registro.evaluation_answer_ask_question" required> 2 - Discordo Parcialmente
+        <input type="radio" name="evaluation_answer_ask_question" value="3"
+            [(ngModel)]="registro.evaluation_answer_ask_question" required> 3 - Nem concordo, nem discordo
+        <input type="radio" name="evaluation_answer_ask_question" value="4"
+            [(ngModel)]="registro.evaluation_answer_ask_question" required> 4 - Concordo Parcialmente
+        <input type="radio" name="evaluation_answer_ask_question" value="5"
+            [(ngModel)]="registro.evaluation_answer_ask_question" required> 5 - Concordo Totalmente
+
+    </div>
+
+
+    <div class="form-group">
+        <label for=name>Você considera satisfatório o aprendizado adquirido? </label>
+
+        <input type="radio" name="evaluation_answer_satisfactory_learning" value="1"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_learning" required> 1 - Discordo Totalmente
+        <input type="radio" name="evaluation_answer_satisfactory_learning" value="2"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_learning" required> 2 - Discordo Parcialmente
+        <input type="radio" name="evaluation_answer_satisfactory_learning" value="3"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_learning" required> 3 - Nem concordo, nem discordo
+        <input type="radio" name="evaluation_answer_satisfactory_learning" value="4"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_learning" required> 4 - Concordo Parcialmente
+        <input type="radio" name="evaluation_answer_satisfactory_learning" value="5"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_learning" required> 5 - Concordo Totalmente
+
+    </div>
+
+
+    <div class="form-group">
+        <label for=name>Você considera satisfatória sua frequência e participação nas aulas? </label>
+
+        <input type="radio" name="evaluation_answer_satisfactory_frequency" value="1"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_frequency" required> 1 - Discordo Totalmente
+        <input type="radio" name="evaluation_answer_satisfactory_frequency" value="2"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_frequency" required> 2 - Discordo Parcialmente
+        <input type="radio" name="evaluation_answer_satisfactory_frequency" value="3"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_frequency" required> 3 - Nem concordo, nem discordo
+        <input type="radio" name="evaluation_answer_satisfactory_frequency" value="4"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_frequency" required> 4 - Concordo Parcialmente
+        <input type="radio" name="evaluation_answer_satisfactory_frequency" value="5"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_frequency" required> 5 - Concordo Totalmente
+
+    </div>
+
+
+    <div class="form-group">
+        <label for=name>Você considera que a infraestrutura que você está usando para acessar o curso atende aos requisitos das aulas? </label>
+
+        <input type="radio" name="evaluation_answer_satisfactory_infrastructure" value="1"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_infrastructure" required> 1 - Discordo Totalmente
+        <input type="radio" name="evaluation_answer_satisfactory_infrastructure" value="2"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_infrastructure" required> 2 - Discordo Parcialmente
+        <input type="radio" name="evaluation_answer_satisfactory_infrastructure" value="3"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_infrastructure" required> 3 - Nem concordo, nem discordo
+        <input type="radio" name="evaluation_answer_satisfactory_infrastructure" value="4"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_infrastructure" required> 4 - Concordo Parcialmente
+        <input type="radio" name="evaluation_answer_satisfactory_infrastructure" value="5"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_infrastructure" required> 5 - Concordo Totalmente
+
+    </div>
+
+
+    <div class="form-group">
+        <label for=name>Você concorda que os temas tratados na disciplina vão lhe ajudar profissionalmente?</label>
+
+        <input type="radio" name="evaluation_answer_satisfactory_themes" value="1"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_themes" required> 1 - Discordo Totalmente
+        <input type="radio" name="evaluation_answer_satisfactory_themes" value="2"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_themes" required> 2 - Discordo Parcialmente
+        <input type="radio" name="evaluation_answer_satisfactory_themes" value="3"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_themes" required> 3 - Nem concordo, nem discordo
+        <input type="radio" name="evaluation_answer_satisfactory_themes" value="4"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_themes" required> 4 - Concordo Parcialmente
+        <input type="radio" name="evaluation_answer_satisfactory_themes" value="5"
+            [(ngModel)]="registro.evaluation_answer_satisfactory_themes" required> 5 - Concordo Totalmente
+
+    </div>
+
+
+    <div class="form-group">
+        <label for=evaluation_answer_is_prerequisite>A Resposta da Avaliação é pré-requisito </label>
+          <input type="radio" name="evaluation_answer_is_prerequisite" value="true" [(ngModel)]="registro.evaluation_answer_is_prerequisite" required> Sim
+          <input type="radio" name="evaluation_answer_is_prerequisite" value="false" [(ngModel)]="registro.evaluation_answer_is_prerequisite" required> Não
+    </div>
+
+
+    <div class="form-group">
+        <label for=name>Avaliação da Resposta pré-requisito </label>
+        <input type="text" placeholder="Período de Alocação do Equipamento " name="evaluation_answer_prerequisite"
+            [(ngModel)]="registro.evaluation_answer_prerequisite" required />
+    </div>
+
+
+    <!-- AQUI INICIA O CÓDIGO DA CHAVE ESTRANGEIRA -->
+    <div class="form-group">
+        <label for="Subject">Disciplina </label>
+        <select [(ngModel)]="registro.subject" [compareWith]="compareById" name="subject" required>
+            <option *ngFor="let item of subject" [ngValue]="item"> {{item.subject_name }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="Teacher">Professor </label>
+        <select [(ngModel)]="registro.teacher" [compareWith]="compareById" name="teacher" required>
+            <option *ngFor="let item of teacher" [ngValue]="item"> {{item.user.user_name }}</option>
+        </select>
+    </div>
+
+    <input type="submit" value="Cancel" routerLink="../">
+    <input type="submit" value="Save" [disabled]="form.invalid">
+
+</form>

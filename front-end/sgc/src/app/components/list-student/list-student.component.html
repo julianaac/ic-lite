@@ -1,0 +1,27 @@
+
+<table class="table table" id="tableStudent">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Turma</th>
+        <th>Modalidade</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of registros">
+        <td> {{ item.user.user_name}} </td>
+        <td> {{ item.classroom.classroom_name}} </td>
+        <td> {{ item.modality.modality_name}} </td>
+        <td class="fit">
+          <button routerLink="/student/form" type="button" [queryParams]="{ id: item.student_id }"  class="btn btn-secondary">Editar</button>
+          <button type="button"(click)="delete(item.student_id)" class="btn btn-danger">Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="9">Total de registros: {{ registros.length }} </td>
+      </tr>
+    </tfoot>
+  </table>

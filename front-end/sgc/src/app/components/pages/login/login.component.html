@@ -1,0 +1,32 @@
+<body>
+  <form (ngSubmit)="submit(form)" #form="ngForm" class="formLogin">
+    <div class="main-login">
+      <div class="left-login">
+        <h1>Seja bem-vindo!</h1>
+        <img src="./assets/img/icone-web-white.png" class="left2-login-image" alt="weicon">
+        <img src="./assets/img/WEB.svg" class="left-login-image" alt="Animation">
+
+      </div>
+      <div class="right-login">
+        <div class="card-login">
+          <h1>LOGIN</h1>
+            <div class="textfield">
+              <label for="user">Usuário</label>
+              <input type="text" name="user_user" placeholder="Digite seu usuário" [(ngModel)]="user.user_user" required>
+            </div>
+
+            <div class="textfield">
+              <label for="password">Senha</label>
+              <input type="password" name="user_password" placeholder="Digite sua senha" [(ngModel)]="user.user_password" required>
+            </div>
+              <button class="btn-login" type="submit" value="Login" [disabled]="form.invalid">LOGIN</button>
+
+              <div>
+                <a class="text-muted" href="#!">Esqueceu sua senha?</a>
+              </div>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</body>

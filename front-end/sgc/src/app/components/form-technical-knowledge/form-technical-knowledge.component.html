@@ -1,0 +1,31 @@
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <h2>Conhecimento Técnico</h2>
+    <input type="hidden" name="technical_Knowledge_id" [(ngModel)]="registro.technical_knowledge_id">
+
+    <div class="form-group">
+        <label for="technical_knowledge_frontend">Nível de Conhecimento em frontend </label>
+        <input type="number" placeholder="Numero de 1 a 10" name="technical_knowledge_frontend" [(ngModel)]="registro.technical_knowledge_frontend"
+            required />
+    </div>
+
+    <div class="form-group">
+        <label for="technical_knowledge_backend">Nível de Conhecimento em backend </label>technical_knowledge_backend
+        <input type="number" placeholder="Numero de 1 a 10" name="technical_knowledge_backend" [(ngModel)]="registro.technical_knowledge_backend"
+            required />
+    </div>
+
+    <div class="form-group">
+        <label for="technical_knowledge_git">Nível de Conhecimento em git </label>technical_knowledge_git
+        <input type="number" placeholder="Numero de 1 a 10" name="technical_knowledge_git"
+            [(ngModel)]="registro.technical_knowledge_git" required />
+    </div>
+
+    <div class="form-group">
+        <label for="technical_knowledge_database">Nível de Conhecimento em Banco de Dados </label>technical_knowledge_database
+        <input type="number" placeholder="Numero de 1 a 10" name="technical_knowledge_database"
+            [(ngModel)]="registro.technical_knowledge_database" required />
+    </div>
+
+    <input type="button" value="Cancelar" routerLink="../">
+    <input type="submit" value="salvar" [disabled]="form.invalid">
+</form>

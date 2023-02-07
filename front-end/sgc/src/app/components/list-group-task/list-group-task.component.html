@@ -1,0 +1,33 @@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Nome</th>
+            <th>Membros</th>
+            <th>Atividades</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of registros">
+            <td> {{ item.group_id }} </td>
+            <td> {{ item.group_name }} </td>
+            <td> {{ item.group_member }} </td>
+            <td> {{ item.task.task_name }} </td>
+        
+            <td class="fit">
+                <button routerLink="/report/form" type="button" [queryParams]="{ id: item.group_id }"
+                    class="btn btn-secondary">Editar</button>
+                <button type="button" (click)="delete(item.group_id)"
+                    class="btn btn-danger">Deletar</button>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="9">Total de registros: {{ registros.length }} </td>
+        </tr>
+    </tfoot>
+</table>
+

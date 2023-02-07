@@ -1,0 +1,63 @@
+<!-- // equipment_location_id: number;
+// equipment_location_period: string;
+
+// student: Student; //fk
+// equipment: Equipment; //fk
+// laboratory: Laboratory; //fk
+// training: Training; //fk
+// classroom: Classroom; //fk -->
+
+
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <h2>Alocação do Equipamento</h2>
+    <input type="hidden" name="equipment_location_id" [(ngModel)]="registro.equipment_location_id">
+
+    <div class="form-group">
+        <label for=name>Período de Alocação do Equipamento </label>
+        <input type="text" placeholder="Período de Alocação do Equipamento " name="equipment_location_period"
+            [(ngModel)]="registro.equipment_location_period" required />
+    </div>
+
+    <!-- AQUI INICIA O CÓDIGO DA CHAVE ESTRANGEIRA -->
+
+    <div class="form-group">
+        <label for="Student">Estudante </label>
+        <select [(ngModel)]="registro.student" [compareWith]="compareById" name="student" required>
+            <option *ngFor="let item of student" [ngValue]="item"> {{item.user.user_name }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="Equipment">Equipamento </label>
+        <select [(ngModel)]="registro.equipment" [compareWith]="compareById" name="equipment" required>
+            <option *ngFor="let item of equipment" [ngValue]="item"> {{item.equipment_name }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="Laboratory">Laboratório </label>
+        <select [(ngModel)]="registro.laboratory" [compareWith]="compareById" name="laboratory" required>
+            <option *ngFor="let item of laboratory" [ngValue]="item"> {{item.laboratory_id }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="training">Capacitação </label>
+        <select [(ngModel)]="registro.training" [compareWith]="compareById" name="training" required>
+            <option *ngFor="let item of training" [ngValue]="item"> {{item.training_name }}</option>
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <label for="Classroom">Sala de Aula </label>
+        <select [(ngModel)]="registro.classroom" [compareWith]="compareById" name="classroom" required>
+            <option *ngFor="let item of classroom" [ngValue]="item"> {{item.classroom_name }}</option>
+        </select>
+    </div>
+
+    <input type="submit" value="Cancel" routerLink="../">
+    <input type="submit" value="Save" [disabled]="form.invalid">
+
+</form>
+

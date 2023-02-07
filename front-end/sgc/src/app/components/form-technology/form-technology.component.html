@@ -1,0 +1,33 @@
+<!-- // technology_id: number;
+// technology_name: string;
+// typeTechnology: TypeTechnology; //fk Só tem uma chave estrangeira.-->
+
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <h2>Cadastro de Tecnologia</h2>
+    <input type="hidden" name="technology_id" [(ngModel)]="registro.technology_id">
+
+    <div class="form-group">
+      <label for=name>Nome da Tecnologia </label>
+      <input type="text" placeholder="Coloque o nome da tecnologia" name="technology_name" [(ngModel)]="registro.technology_name" required />
+    </div>
+
+    <div class="form-group">    
+    <label>Tipo de Tecnologia</label>
+    <select [(ngModel)]="registro.typeTechnology"
+      [compareWith]="compareById"
+      name="typeTechnology" required>
+        <option [ngValue]="null"> Selecione </option>
+      <option *ngFor="let item of typeTechnology"
+        [ngValue]="item"> {{item.type_technology_name}} </option>
+        
+      </select>
+
+    </div>
+
+    <input type="submit" value="Cancel" routerLink="../">
+    <input type="submit" value="Save" [disabled]="form.invalid">
+
+  </form>
+
+
+

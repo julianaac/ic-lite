@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Nome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of registros">
+        <td> {{ item.type_user_id }} </td>
+        <td> {{ item.type_user_name }} </td>
+        <td class="fit">
+          <button routerLink="/report/form" type="button" [queryParams]="{ id: item.type_user_id }"  class="btn btn-secondary">Editar</button>
+          <button type="button"(click)="delete(item.type_user_id)" class="btn btn-danger">Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="9">Total de registros: {{ registros.length }} </td>
+      </tr>
+    </tfoot>
+</table>

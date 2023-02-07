@@ -1,0 +1,36 @@
+<form (ngSubmit)="submit(form)" #form="ngForm">
+  <input type="hidden" name="classroom_id" [(ngModel)]="registro.classroom_id">
+  <div class="form-group">
+    <label for="classroom_name">Nome </label>
+    <input type="text" placeholder="Coloque o nome da turma" name="classroom_name" [(ngModel)]="registro.classroom_name" required />
+  </div>
+  <div class="form-group">
+    <label for="classroom_start_date">Data de inicio</label>
+    <input type="date" placeholder="Insira a data de inicio da turma"  name="classroom_start_date" [(ngModel)]="registro.classroom_start_date" required />
+  </div>
+  <div class="form-group">
+    <label for="classroom_end_date">Data de termino</label>
+    <input type="date" placeholder="Insira a data de termino da turma" name="classroom_end_date"  [(ngModel)]="registro.classroom_end_date" required />
+  </div>
+  <div class="form-group">
+    <label for="laboratory">Laboratório</label>
+    <select [(ngModel)]="registro.laboratory"
+    [compareWith]="compareById"
+    name="laboratory" required>
+      <option *ngFor="let item of laboratorys"
+      [ngValue]="item"> {{item.laboratory_name}} </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="training">Capacitação </label>
+    <select [(ngModel)]="registro.training"
+    [compareWith]="compareById"
+    name="training" required>
+      <option *ngFor="let item of trainings"
+      [ngValue]="item"> {{item.training_name}} </option>
+    </select>
+  </div>
+  <input type="submit" value="Cancel" routerLink="../">
+  <input type="submit" value="Save" [disabled]="form.invalid">
+
+</form>

@@ -1,0 +1,37 @@
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <h2>Cadastro de equipamentos</h2>
+    <input type="hidden" name="equipment_id" [(ngModel)]="registro.equipment_id">
+    <div class="form-group">
+      <label for=name>Nome do equipamento </label>
+      <input type="text" placeholder="Coloque o nome do equipamento" name="equipment_name" [(ngModel)]="registro.equipment_name" required />
+    </div>
+    <div class="form-group">
+      <label>Codigo do equipamento</label>
+      <input type="text" placeholder="Código identificador do equipamento"  name="equipment_identifier" [(ngModel)]="registro.equipment_identifier" required />
+    </div>
+    <div class="form-group">
+      <label>Descrição</label>
+      <input type="text" placeholder="Descrição do equipamento" name="equipment_description"  [(ngModel)]="registro.equipment_description" required />
+    </div>
+    <div class="form-group">
+      <label for="statusEquipment">Status</label>
+      <select [(ngModel)]="registro.statusEquipment"
+      [compareWith]="compareById"
+      name="statusEquipment" required>
+        <option *ngFor="let item of statusEquipment"
+        [ngValue]="item"> {{item.status_equipment_name}} </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="training">Capacitação </label>
+      <select [(ngModel)]="registro.training"
+      [compareWith]="compareById"
+      name="training" required>
+        <option *ngFor="let item of nameTraining"
+        [ngValue]="item"> {{item.training_name}} </option>
+      </select>
+    </div>
+    <input type="submit" value="Cancel" routerLink="../">
+    <input type="submit" value="Save" [disabled]="form.invalid">
+
+  </form>

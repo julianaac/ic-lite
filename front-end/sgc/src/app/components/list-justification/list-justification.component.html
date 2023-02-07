@@ -1,0 +1,40 @@
+<!-- justification_id: number;
+justification_text: string;
+justification_file: string;
+student: Student; //fk
+recordClass: RecordClass; //fk
+absence: Absence; //fk -->
+
+<table class="table table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Texto</th>
+            <th>Arquivo</th>
+            <th>Estudante</th>
+            <th>Registro de Aula</th>
+            <th>Faltas</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of registros">
+            <td> {{ item.justification_id }} </td>
+            <td> {{ item.justification_text }} </td>
+            <td> {{ item.justification_file}} </td>
+            <td> {{ item.student.user.user_name}} </td>
+            <td> {{ item.recordClass.record_class_id}} </td>
+            <td> {{ item.absence.absence_id}} </td>
+            <td>
+                <a routerLink="justification/form" [queryParams]="{ id: item.justification_id}" class="botao">Editar</a>
+                <a (click)="delete(item.justification_id)" class="botao excluir">Excluir</a>
+            </td>
+
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="9">Total de registros: {{ registros.length }} </td>
+        </tr>
+    </tfoot>
+</table>

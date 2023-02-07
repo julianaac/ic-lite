@@ -1,0 +1,60 @@
+<div  class="container-fluid position-relative d-flex p-0" >
+    <app-sidebar></app-sidebar>
+
+<!-- Content Start -->
+  <div class="content">
+    <!-- Navbar Start -->
+    <app-header></app-header>
+    <!-- Navbar End -->
+    <div class="container-fluid pt-4 px-4">
+      <div class="row g-4">
+          <div class="col-sm-12 col-xl-12">
+              <div class="main">
+                  <div class="header col-12">
+                      <div class="ms-3">
+                          <h3>Meu perfil</h3>
+                          <p>UFAC - 2023</p>
+                      </div>
+                      <i class="icon"><img src="../../../../assets/img/web-icon 2.png"></i>
+
+                  </div>
+
+                  <!-- DADOS GERAIS - FOTO E NOME DE USUÁRIO -->
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm" id="picture-foto">
+                        <p class="bold">Informações do Usuário</p>
+                          <label class="picture"  tabIndex="0">
+                              <span class="picture__image">Alterar foto</span>
+                              <input type="file" accept="image/*" id="picture__input" />
+                          </label>                        
+                      </div>
+
+                      <!-- INFORMAÇÕES DE USUÁRIO -->
+                      <div class="col-sm">
+                        <p class="bold">Nome: <span>{{getUser().user_name}} </span></p>
+                        <p class="bold">Usuário: <span>{{getUser().user_user}} </span></p>
+                        <p class="bold">E-mail: <span>{{getUser().user_email}} </span></p>
+                        <p class="bold">CPF: <span>{{getUser().user_cpf}} </span></p>
+                        <p class="bold">Git: <span>{{getUser().user_git}} </span></p>
+                        <p class="bold">Telefone: <span>{{getUser().user_telephone}} </span></p>
+                        <p class="bold">Senha: ********<span>{{getUser().user_password}} </span></p>
+                        <input class= "btn-alter-password" type="button" value="Alterar senha">
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <button class="btn-secondary">Salvar Alterações</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer Start -->
+<app-footer></app-footer>
+
+<!-- Footer End -->
+</div>
+<!-- Content End -->
+</div>
+<!-- Back to Top -->
+<a href="#" class="btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

@@ -1,0 +1,84 @@
+<div  class="container-fluid position-relative d-flex p-0" >
+  <app-sidebar></app-sidebar>
+
+
+  <!-- Content Start -->
+  <div class="content" id="myselector">
+      <!-- Navbar Start -->
+      <app-header></app-header>
+      <!-- Navbar End -->
+      <div class="container-fluid pt-4 px-4">
+        <div class="row g-4">
+            <div class="col-sm-12 col-xl-12">
+                <div class="main ">
+                    <div class="header col-12">
+                        <div class="ms-3">
+                            <h3>Gerenciador De Capacitação</h3>
+                            <p>UFAC - 2023</p>
+                        </div>
+
+                        <i class="icon"><img src="../../../../assets/img/icon.png"></i>
+
+                    </div>
+                    <div class="container">
+                      <div id="cardTraining" class="row">
+                        <div class="single-card">
+                          <div class="wrapper" id="wrape">
+                            <i class="iconCard"><img src="../../../../assets/img/vectorFull.png"></i>
+                            <button id="">Full-Stack</button>
+                          </div>
+                        </div>
+                        <div class="single-card">
+                          <div class="wrapper" id="wrape">
+                            <i class="iconCard"><img src="../../../../assets/img/vectorAnd.png"></i>
+                            <button  id="">Android</button>
+                          </div>
+                        </div>
+                        <div class="single-card">
+                          <div class="wrapper" id="wrape">
+                            <i class="iconCard"><img src="../../../../assets/img/vectorNew.png"></i>
+                            <button  id="open-modal">Nova Capacitação</button>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div id="fade" class="hide"></div>
+                      <div id="modal" class="hide">
+                        <div class="modal-header">
+                          <h2>Cadastro de Capacitação</h2>
+                          <button id="close-modal">Fechar</button>
+                        </div>
+                        <div class="modal-body">
+                          <app-alert></app-alert>
+
+                          <app-form-training></app-form-training>
+                        </div>
+                      </div>
+                      <div class="row">
+
+                      <button class="btn btn-primary" type="button" (click)="dataHoje()">TESTE</button>{{now | date:'dd/MM/yyyy HH:mm': '-05:00'}}
+                        <br>
+                        <app-list-training></app-list-training>
+
+                      </div>
+
+                    </div>
+
+
+              </div>
+
+
+        </div>
+      </div>
+
+      <!-- Footer Start -->
+      <app-footer></app-footer>
+      <!-- Footer End -->
+  </div>
+  <!-- Content End -->
+
+  <!-- Back to Top -->
+  <a href="#" class="btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+</div>

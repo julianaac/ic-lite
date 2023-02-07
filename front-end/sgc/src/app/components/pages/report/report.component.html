@@ -1,0 +1,234 @@
+
+
+<div  class="container-fluid position-relative d-flex p-0" >
+  <app-sidebar></app-sidebar>
+
+
+  <!-- Content Start -->
+  <div class="content">
+      <!-- Navbar Start -->
+      <app-header></app-header>
+      <!-- Navbar End -->
+      <div class="container-fluid pt-4 px-4">
+        <div class="row g-4">
+            <div class="col-sm-12 col-xl-12">
+                <div class="main">
+                    <div class="header col-12">
+                        <div class="ms-3">
+                            <h3>Relatório</h3>
+                            <p>UFAC - 2023</p>
+                        </div>
+
+                        <i class="icon"><img src="../../../../assets/img/iconReport.png"></i>
+
+                    </div>
+
+                    <div class="container">
+
+
+                      <div class="listReport" *ngIf="isAluno()">
+                        <h2>RELATÓRIOS CRIADOS </h2>
+                        <app-list-report ></app-list-report>
+                      </div>
+                      <div class="listReport" *ngIf="isCoord()">
+                        <h2>RELATÓRIOS RECEBIDOS </h2>
+                        <app-list-report-coord ></app-list-report-coord>
+                      </div>
+                      <div class="listReport">
+                        <div class="row">
+                          <div class="col-6">
+                            <h2>RELATÓRIOS GERAIS</h2>
+                          </div>
+                          <div class="col-6">
+                            <div class="input-box">
+                              <input type="text" class="form-control">
+                              <i class="fa fa-search"></i>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <table class="table" id="tableTraining">
+                          <thead>
+                            <tr>
+                              <th>TIPO</th>
+                              <th>AUTOR</th>
+                              <th>DESCRICÃO</th>
+                              <th>Ações</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Diário</td>
+                              <td>Paulo Sampaio</td>
+                              <td>Relátório Diário </td>
+                              <td class="fit">
+                                <!-- <input type="submit" value="Deletar">
+                                <input type="submit" value="Baixar">
+                                <input type="submit" value="Enviar"> -->
+                                <button type="button" class="btn btn-outline-danger">Deletar</button>
+                                <button type="button" class="btn btn-outline-info">Enviar</button>
+                                <button type="button"  class="btn btn-outline-success">Baixar</button>
+                                <!-- <i class="fa-duotone fa-file-export"></i>
+                               <button type="button" ><i class="del fas fa-trash-alt"></i></button>
+                                <button><i type="button" routerLink="/new" class="print fas fa-print"></i></button> -->
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <app-form-report></app-form-report>
+                      <!-- <button  class="btn btn-danger">Baixe o relatorio</button> -->
+                      <div id="exemplo" #exemplo [hidden]="true">
+                        <div class="row">
+                          <div class="col-2" id="logoFundape">
+                            <div class="fundape text-center">
+                              <i><img src="../../../../assets/img/images.png"></i>
+                            </div>
+                          </div>
+                          <div class="col-10" id="textTitle">
+                            <div class="titleRel text-center">
+                              <h2>Fundação de Apoio e Desenvolvimento ao Ensino, Pesquisa e Extensão Universitária do Acre.</h2>
+                            </div>
+                          </div>
+
+                          <div class="col-12 text-center">
+                            <p class="bold">RELATÓRIO E ATIVIDADES</p>
+                          </div>
+                          <div class="col-12">
+                            <p class="bold">Nome:{{getUser().user_name}} <span></span></p>
+                          </div>
+                          <div class="col-12">
+                            <p class="bold">Unidade: UFAC/CCET/PPGCC/WEBACADEMY</p>
+                          </div>
+                          <div class="col-12">
+                            <p class="bold">Programa: FUNDAPE/UFAC/FLEXTRONICS/MOTOROLA/PROJETO DE CAPACITAÇÃO WEBACADEMY</p>
+                          </div>
+                          <div class="col-12">
+                            <p class="bold">Função: Aluno - Auxílio Capacitação</p>
+                          </div>
+                          <div class="col-9">
+                            <p class="bold">Atividades</p>
+                          </div>
+                          <div class="col-3">
+                            <p class="bold">Mês: Janeiro</p>
+                          </div>
+                          <div class="col-12">
+                            <p >Descrição das atividades realizadas no mês</p>
+                          </div>
+                          <div class="col-12">
+                            <span class="bold"></span>
+                            <p>Nessa disciplina podemos ver um escopo maior da área de front-end,
+                              alguns frameworks mais utilizados pelos profissionais atualmente.
+                              Começamos entendendo um pouco dos conceitos conceitos importantes do front,
+                              como mobile first, boas práticas, além de tendências de mercado e como essa
+                              área muda e a cada ano surge uma nova tecologia. Aprendemos também as boas
+                               práticas de programação e como isso influência em um projeto. Aprendemos
+                               ainda bootstrap na prática desenvolvendo um site de uma empresa de tecnologia.
+                               Também fizemos uma atividade interdisciplinar, que é o projeto favorite,
+                               aplicando as boas práticas, e utilizando o que aprendemos até aqui para
+                                desenvolver um projeto responsivo e com uma identidade visual.</p>
+                          </div>
+
+                          <div class="col-6 bold text-center">
+                            <p>Chameison</p>
+                            <p>Assinatura</p>
+                          </div>
+                          <div class="col-6 bold text-center">
+                            <p>Paulo Sampaio de Lima Júnior</p>
+                            <p>Assinatura do Supervisor</p>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+
+                        <!-- REPORT COORD -->
+                        <div id="exemplo" #exemplo  [hidden]="true">
+                          <div class="row">
+                            <div class="col-2" id="logoFundape">
+                              <div class="fundape text-center">
+                                <i><img src="https://fundape.com.br/assets/images/logo.png"></i>
+                              </div>
+                            </div>
+                            <div class="col-10" id="textTitle">
+                              <div class="titleRel text-center">
+                                <h2>Fundação de Apoio e Desenvolvimento ao Ensino, Pesquisa e Extensão Universitária do Acre.</h2>
+                              </div>
+                            </div>
+
+                            <div class="col-12 text-center">
+                              <p class="bold">Tipo: Mensal</p>
+                            </div>
+                            <div class="col-12">
+                              <p class="bold">Nome: <span>Paulo Sampaio</span></p>
+                            </div>
+                            <div class="col-12">
+                              <p class="bold">Unidade: UFAC/CCET/PPGCC/WEBACADEMY</p>
+                            </div>
+                            <div class="col-12">
+                              <p class="bold">Programa: FUNDAPE/UFAC/FLEXTRONICS/MOTOROLA/PROJETO DE CAPACITAÇÃO WEBACADEMY</p>
+                            </div>
+                            <div class="col-12">
+                              <p class="bold">Função: Coordenador - Relatório</p>
+                            </div>
+                            <div class="col-9">
+                              <p class="bold">Relatório Mensal</p>
+                            </div>
+                            <div class="col-3">
+                              <p class="bold">Mês: Janeiro</p>
+                            </div>
+                            <div class="col-12">
+                              <p >Descreva Abaixo:</p>
+                            </div>
+                            <div class="col-12">
+                              <span class="bold">Diário</span>
+                              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Quibusdam numquam perferendis atque id maiores sunt, eius
+                                dicta earum alias minus velit illo, officiis, neque eligendi
+                                incidunt eos. Laborum, nihil optio!.</p>
+                            </div>
+
+                            <!-- <div class="col-6 bold text-center">
+                              <p>Chameison</p>
+                              <p>Assinatura</p>
+                            </div>
+                            <div class="col-6 bold text-center">
+                              <p>Paulo Sampaio de Lima Júnior</p>
+                              <p>Assinatura do Supervisor</p>
+                            </div> -->
+                          </div>
+                        </div>
+
+
+
+
+                      <!-- <app-list-training></app-list-training> -->
+                    </div>
+                    <div class="container">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="active">
+                            <a href="#tab-table1" data-toggle="tab">Visualização de checkin</a>
+                        </li>
+                        <li>
+                            <a href="#tab-table2" data-toggle="tab">Visualização de faltas</a>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Footer Start -->
+      <app-footer></app-footer>
+      <!-- Footer End -->
+  </div>
+  <!-- Content End -->
+</div>
+  <!-- Back to Top -->
+  <a href="#" class="btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+

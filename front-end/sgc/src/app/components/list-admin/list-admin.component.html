@@ -1,0 +1,25 @@
+<table class="table table" id="tableEquipment">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Capacitação</th>
+        <th>Usuário</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of registros">
+        <td> {{ item.training.training_name }} </td>
+        <td> {{ item.user.user_name }} </td>
+        <td class="fit">
+            <button routerLink="/report/form" type="button" [queryParams]="{ id: item.admin_id }" class="btn btn-secondary">Editar</button>
+            <button type="button" (click)="delete(item.admin_id)" class="btn btn-danger">Deletar</button>
+
+        </td>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="9">Total de registros: {{ registros.length }} </td>
+      </tr>
+    </tfoot>
+</table>

@@ -1,0 +1,31 @@
+
+<table class="table table" id="tableEquipment">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Ausência Justificada</th>
+        <th>Data de Ausência</th>
+        <th>Estudante</th>
+        <th>Disciplina</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of registros">
+        <td> {{ item.absence_if_justified }} </td>
+        <td> {{ item.absence_date }} </td>
+        <td> {{ item.student.user.user_name }} </td>
+        <td> {{ item.subject.subject_name }} </td>
+        <td class="fit">
+          <button routerLink="/report/form" type="button" [queryParams]="{ id: item.absence_id }"  class="btn btn-secondary">Editar</button>
+          <button type="button"(click)="delete(item.absence_id)" class="btn btn-danger">Deletar</button>
+
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="9">Total de registros: {{ registros.length }} </td>
+      </tr>
+    </tfoot>
+  </table>

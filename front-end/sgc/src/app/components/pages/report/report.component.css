@@ -1,0 +1,101 @@
+.main{
+  height: 1000vh;
+}
+.icon img{
+  width: 80px;
+
+}.iconCard img{
+  width: 200px;
+}
+
+.card{height: 1000px;}
+h2{
+  margin-top: 50px;
+  font-size: 25px;
+}
+.listReport H2{
+  font-size: 25px;
+  color: black;
+}
+.fit{
+  width: 300px;
+}
+.btn{
+  margin-right: 5px;
+}
+textarea{
+  margin-top: 10px;
+  height: 200px;
+  border: none;
+  border-radius: 10px;
+}
+form{
+  margin-top: 20px;
+  background-color: #f1f1f1;
+}
+
+
+.input-box{
+  position: relative;
+  padding-top: 50px;
+}
+
+.input-box i {
+  position: absolute;
+  right: 13px;
+  top:60px;
+  color:#ced4da;
+
+}
+
+.form-control{
+
+  height: 30px;
+  background-color:#eeeeee69;
+}
+
+.form-control:focus{
+  background-color: #eeeeee69;
+  box-shadow: none;
+  border-color: #eee;
+}
+
+
+
+/* ESTILOS DO RELATORIO  */
+#exemplo .row{
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+#exemplo{
+  max-width: 1000px;
+  padding: 30px;
+}
+#exemplo .row{
+  height: 1000px;
+}
+#exemplo h2{
+  color: black;
+  font-weight: lighter;
+  font-size: 20px;
+
+}
+
+.fundape img{
+  width: 100px;
+  margin-top: 35px;
+}
+#textTitle{
+  border: 1px solid black;
+}
+#logoFundape {
+  border: 1px solid;
+}
+.col-3, .col-9, .col-6,.col-12{
+  color: black;
+  border: 1px solid black;
+}
+.bold{
+font-weight: bold;
+}

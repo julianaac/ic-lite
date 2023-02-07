@@ -1,0 +1,32 @@
+<table class="table table" id="tableEquipment">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Conteúdo</th>
+        <th>Feedback</th>
+        <th>Nota de Resposta</th>
+        <th>Usuário</th>
+        <th>Tarefa</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of registros">
+        <td> {{ item.single_answer_content }} </td>
+        <td> {{ item.single_answer_feedback }} </td>
+        <td> {{ item.single_answer_grade }} </td>
+        <td> {{ item.user.user_name }} </td>
+        <td> {{ item.task.task_name }} </td>
+        <td class="fit">
+          <button routerLink="/report/form" type="button" [queryParams]="{ id: item.single_answer_id }"  class="btn btn-secondary">Editar</button>
+          <button type="button"(click)="delete(item.single_answer_id)" class="btn btn-danger">Deletar</button>
+
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="9">Total de registros: {{ registros.length }} </td>
+      </tr>
+    </tfoot>
+</table>

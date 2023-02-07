@@ -1,0 +1,65 @@
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <h2>Cadastro de usuario</h2>
+    <input type="hidden" name="user_id" [(ngModel)]="registro.user_id">
+    <div class="form-group">
+      <label for=name>Nome do Usuário</label>
+      <input type="text" placeholder="Coloque o nome do usuário" name="user_name" [(ngModel)]="registro.user_name" required />
+    </div>
+    <div class="form-group">
+      <label for="user_user">Usuário</label>
+      <input type="text" placeholder="Insira o nome de Usuário"  name="user_user" [(ngModel)]="registro.user_user" required />
+    </div>
+    <div class="form-group">
+      <label for="user_password">Senha</label>
+      <input type="password" placeholder="Insira a senha" name="user_password"  [(ngModel)]="registro.user_password" required />
+    </div>
+    <div class="form-group">
+        <label for="user_cpf">Cpf</label>
+        <input type="text" placeholder="Insira o CPF do usuário"  name="user_cpf" [(ngModel)]="registro.user_cpf" required />
+    </div>
+    <div class="form-group">
+        <label for="user_registration">Matricula</label>
+        <input type="text" placeholder="Insira a matricula do Usuário"  name="user_registration" [(ngModel)]="registro.user_registration" required />
+    </div>
+    <div class="form-group">
+        <label for="user_curriculum_vitae">Curriculum Vitae</label>
+        <input type="text" placeholder="Insira link do curriculum Vitae do usuário"  name="user_curriculum_vitae" [(ngModel)]="registro.user_curriculum_vitae" required />
+    </div>
+    <div class="form-group">
+        <label for="user_email">Email</label>
+        <input type="text" placeholder="Insira o email do Usuário"  name="user_email" [(ngModel)]="registro.user_email" required />
+    </div>
+        <div class="form-group">
+        <label for="user_git">Git</label>
+        <input type="text" placeholder="Insira o link do git do Usuário"  name="user_git" [(ngModel)]="registro.user_git" required />
+    </div>
+    <div class="form-group">
+        <label for="user_telephone">Telefone</label>
+        <input type="text" placeholder="Insira o numero do telefone"  name="user_telephone" [(ngModel)]="registro.user_telephone" required />
+    </div>
+    <div class="form-group">
+        <label for="user_small_bibliograpy">Bibliografia</label>
+        <input type="text" placeholder="Insira a bibliografia"  name="user_small_bibliograpy" [(ngModel)]="registro.user_small_bibliograpy" required />
+    </div>
+        <div class="form-group">
+      <label for="typeUser">Tipo de usuário</label>
+      <select [(ngModel)]="registro.typeUser"
+      [compareWith]="compareById"
+      name="typeUser" required>
+        <option *ngFor="let item of typeUser"
+        [ngValue]="item"> {{item.type_user_name}} </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="situation">Situação</label>
+      <select [(ngModel)]="registro.situation"
+      [compareWith]="compareById"
+      name="situation" required>
+        <option *ngFor="let item of situation"
+        [ngValue]="item"> {{item.situation_name}} </option>
+      </select>
+    </div>
+    <input type="submit" value="Cancel" routerLink="../">
+    <input type="submit" value="Save" [disabled]="form.invalid">
+
+  </form>

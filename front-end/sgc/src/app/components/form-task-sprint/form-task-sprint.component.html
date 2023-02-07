@@ -1,0 +1,76 @@
+<!-- task_sprint_id: number;
+task_sprint_name: string;
+task_sprint_description: string;
+task_sprint_start: string;
+task_sprint_end: string;
+task_sprint_description_conflict: string;
+task_sprint_completion_level: number; // este era double no bd.
+task_sprint_responsible_ids: string;
+task_sprint_responsible_conflict_ids: string;
+sprint: Sprint; //fk -->
+
+
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <h2>Sprint da Atividade</h2>
+    <input type="hidden" name="task_sprint_id" [(ngModel)]="registro.task_sprint_id">
+
+    <div class="form-group">
+        <label for=name>Nome da Sprint da Atividade </label>
+        <input type="text" placeholder="Coloque o nome da sprint da atividade " name="task_sprint_name"
+            [(ngModel)]="registro.task_sprint_name" required />
+    </div>
+
+    <div class="form-group">
+        <label>Descrição da Sprint da Atividade</label>
+        <input type="text" placeholder="Coloque a descrição da sprint da atividade" name="task_sprint_description"
+            [(ngModel)]="registro.task_sprint_description" required />
+    </div>
+
+    <div class="form-group">
+        <label>Sprint do Início da Atividade</label>
+        <input type="date" placeholder="Coloque o Sprint Inicial da Atividade" name="task_sprint_start"
+            [(ngModel)]="registro.task_sprint_start" required />
+    </div>
+
+    <div class="form-group">
+        <label>Sprint do Término da Atividade</label>
+        <input type="date" placeholder="Coloque o Sprint Final da Atividade" name="task_sprint_end"
+            [(ngModel)]="registro.task_sprint_end" required />
+    </div>
+
+    <div class="form-group">
+        <label>Descrição dos Conflitos da Sprint da Atividade</label>
+        <input type="text" placeholder="Coloque o Sprint Final da Atividade" name="task_sprint_description_conflict"
+            [(ngModel)]="registro.task_sprint_description_conflict" required />
+    </div>
+
+    <div class="form-group">
+        <label>Nível completo da Sprint da Atividade</label>
+        <input type="number" placeholder="Coloque o Nível completo da Sprint da Atividade" name="task_sprint_completion_level"
+            [(ngModel)]="registro.task_sprint_completion_level" required />
+    </div>
+
+    <div class="form-group">
+        <label>Ids da Responsabilidade da Sprint da Atividade</label>
+        <input type="text" placeholder="Coloque o Ids da Responsabilidade da Sprint da Atividade"
+            name="task_sprint_responsible_ids" [(ngModel)]="registro.task_sprint_responsible_ids" required />
+    </div>
+
+    <div class="form-group">
+        <label>Ids da Responsabilidade dos conflitos da Sprint da Atividade</label>
+        <input type="number" placeholder="Coloque o Ids da Responsabilidade da Sprint da Atividade"
+            name="task_sprint_responsible_conflict_ids" [(ngModel)]="registro.task_sprint_responsible_conflict_ids" required />
+    </div>
+
+<!-- AQUI INICIA O CÓDIGO DA CHAVE ESTRANGEIRA -->
+    <div class="form-group">
+        <label for="sprint">Sprint </label>
+        <select [(ngModel)]="registro.sprint" [compareWith]="compareById" name="sprint" required>
+            <option *ngFor="let item of sprint" [ngValue]="item"> {{item.sprint_name }}</option>
+        </select>
+    </div>
+
+    <input type="submit" value="Cancel" routerLink="../">
+    <input type="submit" value="Save" [disabled]="form.invalid">
+
+</form>

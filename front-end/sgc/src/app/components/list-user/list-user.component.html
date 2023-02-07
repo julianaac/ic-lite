@@ -1,0 +1,45 @@
+<div class="TableOverflow">
+  <table class="table" datatable [dtOptions]="dtoptions"  [dtTrigger]="dtTrigger" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Usuário</th>
+          <th>CPF</th>
+          <th>Registro</th>
+          <th>Curriculo</th>
+          <th>Email</th>
+          <th>Git</th>
+          <th>Telefone</th>
+          <th>Bibliografia</th>
+          <th>Tipo de usuário</th>
+          <th>Situação de usuário</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of registros">
+          <td> {{ item.user_name}} </td>
+          <td> {{ item.user_user }} </td>
+          <td> {{ item.user_cpf}} </td>
+          <td> {{ item.user_registration}} </td>
+          <td> {{ item.user_curriculum_vitae}} </td>
+          <td> {{ item.user_email}} </td>
+          <td> {{ item.user_git}} </td>
+          <td> {{ item.user_telephone}} </td>
+          <td> {{ item.user_small_bibliograpy}} </td>
+          <td> {{ item.typeUser.type_user_name }} </td>
+          <td> {{ item.situation.situation_name}} </td>
+          <td class="fit">
+            <button routerLink="/report/form" type="button" [queryParams]="{ id: item.user_id }"  class="btn btn-secondary">Editar</button>
+            <button type="button"(click)="delete(item.user_id)" class="btn btn-danger">Deletar</button>
+
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="9">Total de registros: {{ registros.length }} </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>

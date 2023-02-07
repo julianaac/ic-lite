@@ -1,0 +1,19 @@
+
+
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <h2>Cadastro de Equipe</h2>
+    <input type="hidden" name="team_id" [(ngModel)]="registro.team_id">
+
+    <div class="form-group">
+        <label for="team_code">Nome da Equipe</label>
+        <input type="text" placeholder="Coloque o nome" name="team_name" [(ngModel)]="registro.team_name"
+            required />
+    </div>
+    <div class="form-group">
+        <label for="team_name">Membros da Equipe</label>
+        <input type="text" placeholder="Coloque os membros da equipe" name="team_name" [(ngModel)]="registro.team_member_ids"
+            required />
+    </div>
+    <input type="button" value="Cancelar" routerLink="../">
+    <input type="submit" value="salvar" [disabled]="form.invalid">
+</form>

@@ -1,0 +1,54 @@
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <h2>Cadastro de Disciplina</h2>
+    <input type="hidden" name="subject_id" [(ngModel)]="registro.subject_id">
+    <div class="form-group">
+      <label for=name>Nome</label>
+      <input type="text" placeholder="Coloque o nome da disciplina" name="subject_name" [(ngModel)]="registro.subject_name" required />
+    </div>
+    <div class="form-group">
+      <label for="subject_start_date">Data de inicio</label>
+      <input type="date" placeholder="Data de inicio da disciplina"  name="subject_start_date" [(ngModel)]="registro.subject_start_date" required />
+    </div>
+    <div class="form-group">
+        <label for="subject_end_date">Data de Termino</label>
+        <input type="date" placeholder="Data de termino da disciplina"  name="subject_end_date" [(ngModel)]="registro.subject_end_date" required />
+    </div>
+    <div class="form-group">
+      <label for="subject_workload">Carga Horária</label>
+      <input type="number" placeholder="Carga horária da disciplina" name="subject_workload"  [(ngModel)]="registro.subject_workload" required />
+    </div>
+    <div class="form-group">
+        <label for="subject_number_class">Numero de Aulas</label>
+        <input type="number" placeholder="Numero de aulas da disciplina" name="subject_number_class"  [(ngModel)]="registro.subject_number_class" required />
+      </div>
+    <div class="form-group">
+      <label for="user">Usuário</label>
+      <select [(ngModel)]="registro.teacher"
+      [compareWith]="compareById"
+      name="user" required>
+        <option *ngFor="let item of teacher"
+        [ngValue]="item"> {{item.user.user_name}} </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="training">Capacitação </label>
+      <select [(ngModel)]="registro.training"
+      [compareWith]="compareById"
+      name="training" required>
+        <option *ngFor="let item of training"
+        [ngValue]="item"> {{item.training_name}} </option>
+      </select>
+    </div>
+    <div class="form-group">
+        <label for="classroom">Turma </label>
+        <select [(ngModel)]="registro.classroom"
+        [compareWith]="compareById"
+        name="classroom" required>
+          <option *ngFor="let item of classroom"
+          [ngValue]="item"> {{item.classroom_name}} </option>
+        </select>
+      </div>
+    <input type="submit" value="Cancel" routerLink="../">
+    <input type="submit" value="Save" [disabled]="form.invalid">
+
+  </form>

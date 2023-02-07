@@ -1,0 +1,47 @@
+<!-- // subject_id: number;
+//   subject_name: string;
+//   subject_end_date: Date;
+//   subject_start_date: Date;
+//   subject_workload: number;
+//   subject_number_class: number;
+//   training: Training;  //fk
+//   teacher: Teacher; //fk
+//   classroom: Classroom; //fk -->
+
+<table class="table table" id="tableSubject">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Data de inicio</th>
+      <th>Data de termino</th>
+      <th>Carga horária</th>
+      <th>Numero de aulas</th>
+      <th>Capacitação</th>
+      <th>Professor</th>
+      <th>Turma</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of registros">
+      <td> {{ item.subject_name}} </td>
+      <td> {{ item.subject_start_date}} </td>
+      <td> {{ item.subject_end_date }} </td>
+      <td> {{ item.subject_workload}} </td>
+      <td> {{ item.subject_number_class}} </td>
+      <td> {{ item.training.training_name }} </td>
+      <td> {{ item.teacher.user.user_name}} </td>
+      <td> {{ item.classroom.classroom_name}} </td>
+      <td class="fit">
+        <button routerLink="/subject/form" type="button" [queryParams]="{ id: item.subject_id }"  class="btn btn-secondary">Editar</button>
+        <button type="button"(click)="delete(item.subject_id)" class="btn btn-danger">Deletar</button>
+
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="9">Total de registros: {{ registros.length }} </td>
+    </tr>
+  </tfoot>
+</table>
