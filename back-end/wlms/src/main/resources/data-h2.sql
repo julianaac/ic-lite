@@ -1,4 +1,4 @@
-SET SESSION FOREIGN_KEY_CHECKS=0;
+SET REFERENTIAL_INTEGRITY FALSE;
 INSERT INTO `type_user` (`type_user_id`, `type_user_name`) VALUES (1, 'ROLE_COORDENADOR_DO_PROJETO'),
 (2, 'ROLE_COORDENADOR_PEDAGOGICO'),
 (3, 'ROLE_ANALISTA_DESENVOLVEDOR_SISTEMA'),
@@ -1126,7 +1126,4 @@ INSERT INTO `checkin` (`checkin_id`, `checkin_entry`, `checkin_exit`, `checkin_s
 -- INSERT INTO `status_equipment` (`status_equipment_id`,`status_equipment_name`) VALUES (1,'Em Uso');
 -- INSERT INTO `equipment` (`equipment_id`,`equipment_name`, `equipment_description`, `equipment_identifier`, `equipment_status_equipment_fk`, `equipment_training_fk`) VALUES (1,'Notebook Avell', 'Notebook Avell intel core i7', 'Equipamento 14', '1', '1');
 
-
-
-SET SESSION FOREIGN_KEY_CHECKS=1;
-
+SET REFERENTIAL_INTEGRITY TRUE;
