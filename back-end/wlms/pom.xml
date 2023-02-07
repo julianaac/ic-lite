@@ -51,6 +51,7 @@
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<!-- diff -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -64,6 +65,7 @@
 	</dependencies>
 
 	<build>
+		<!-- dif -->
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
