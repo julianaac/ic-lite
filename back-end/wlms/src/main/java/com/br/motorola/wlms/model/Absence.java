@@ -22,6 +22,7 @@ public class Absence {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(nullable = false, updatable = false)
         private Long absence_id; 
+        //deu certo
 
         @Column(nullable = false)
         private boolean absence_if_justified;
