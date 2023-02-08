@@ -22,7 +22,7 @@ jobs:
           java-version: '11'
           distribution: 'zulu'
       - name: Test
-        working-directory: back-end/
+        working-directory: back-end/wlms/
         run: mvn --activate-profiles prod test
   package:
     needs: test
@@ -35,5 +35,5 @@ jobs:
           java-version: '11'
           distribution: 'zulu'
       - name: Package
-        working-directory: back-end/
+        working-directory: back-end/wlms/
         run: mvn --activate-profiles prod -DskipTests package
