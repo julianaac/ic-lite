@@ -73,7 +73,7 @@ public class ReportControllerTest {
             .contentType(MediaType.APPLICATION_JSON))
             .andExpect(MockMvcResultMatchers.status().isOk())
             .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(1)))
-            .andExpect(MockMvcResultMatchers.jsonPath("$[0].status", Matchers.is(EStatusReport.CRIADO.toString())));
+            .andExpect(MockMvcResultMatchers.jsonPath("$[0].report_status", Matchers.is(EStatusReport.CRIADO.toString())));
     }
     
 }
