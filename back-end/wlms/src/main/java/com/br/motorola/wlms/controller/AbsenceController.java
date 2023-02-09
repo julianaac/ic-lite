@@ -1,5 +1,5 @@
 package com.br.motorola.wlms.controller;
-// PARA TER CERTEZA QUE DEU CERTO
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.br.motorola.wlms.model.Absence;
